@@ -5,19 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "commit": "git-cz"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-   },
-   "lint-staged": {
-   "*.tsx": [
-      "eslint --fix",
-      "git add"
-   ]
-   },
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "next": "9.5.3",
     "react": "16.13.1",
@@ -30,6 +30,8 @@
     "@types/react": "^16.9.50",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-import-resolver-typescript": "^2.3.0",
@@ -40,5 +42,10 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "typescript": "^4.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
