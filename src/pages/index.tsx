@@ -1,12 +1,13 @@
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-export default function Home() {
-  return (
-    <div >
-      <Head>
-        <title>Pawee Space</title>
-      </Head>
-      <h1>Pawee Space</h1>
-    </div>
-  )
-}
+const Home:React.FunctionComponent = () => (
+  <div>
+    <Head>
+      <title>Pawee Space</title>
+    </Head>
+    <h1>Pawee Space</h1>
+  </div>
+);
+
+export default Home;
