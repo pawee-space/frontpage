@@ -9,10 +9,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint --test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "lint-staged"
     }
-  },
+   },
+   "lint-staged": {
+   "*.tsx": [
+      "eslint --fix",
+      "git add"
+   ]
+   },
   "dependencies": {
     "next": "9.5.3",
     "react": "16.13.1",
