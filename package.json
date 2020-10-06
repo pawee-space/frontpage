@@ -15,7 +15,6 @@
   },
   "lint-staged": {
     "*.tsx": [
-      "eslint --fix"
     ]
   },
   "dependencies": {
