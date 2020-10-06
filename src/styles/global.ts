@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
    * {
       margin: 0;
       padding: 0;
@@ -26,8 +24,11 @@ export default createGlobalStyle`
    :root{
       --color-background: #ebebeb;
       --color-primary: #663399;
+      --color-primary-dark: #5C2E8A;
+      --color-primary-darker: #52297A;
       --color-text-base: #121212;
       --color-text-in-primary: #ffffff;
+      --color-text-complement: #444444;
    }
 
    @media (min-width: 700px) {
