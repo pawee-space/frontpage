@@ -5,9 +5,9 @@
         "node": true
     },
     "extends": [
-       "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "airbnb"
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "airbnb"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -27,7 +27,9 @@
         "react-hooks"
     ],
     "rules": {
+      "react/react-in-jsx-scope": "off",
       "no-use-before-define": "off",
+      "react/jsx-props-no-spreading": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
