@@ -89,7 +89,7 @@ export const ImageContainer = styled.div`
    }
 `;
 
-export const DataContent = styled.div`
+export const DataSection = styled.div`
    height: 100vh;
    display: flex;
    justify-content: center;
@@ -124,6 +124,136 @@ export const DataContent = styled.div`
          p {
             margin-top: 1.5rem;
          }
+      }
+   }
+`;
+
+export const FeatureSection = styled.div`
+   background: var(--color-background-darker);
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   h1 {
+      font: 500 4.5rem Poppins;
+      max-width: 90rem;
+      text-align: center;
+      line-height: 5rem;
+   }
+
+   p {
+      margin-top: 1rem;
+      font: 300 2.8rem Roboto;
+      text-align: center;
+      color: var(--color-text-complement);
+   }
+
+   button {
+      margin-top: 5rem;
+      background: var(--color-primary);
+      color: var(--color-text-in-primary);
+      width: 13rem;
+      height: 4.5rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s linear;
+
+      &:hover{
+         cursor: pointer;
+         background: var(--color-primary-dark);
+      }
+   }
+
+   div {
+      margin-top: 7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+         flex-direction: column;
+         background: var(--color-background);
+         padding: 2.5rem 0;
+         border-radius: 2rem;
+         box-shadow: 0 0 1rem 1rem rgba(136, 136, 136, 0.2);
+
+         img {
+            width: 10rem;
+         }
+
+         h1 {
+            margin-top: 3rem;
+            font-size: 2.5rem;
+         }
+
+         p {
+            font: 500 2rem Roboto;
+            width: 30rem;
+         }
+
+         & + div {
+            margin-left: 10rem;
+         }
+      }
+   }
+`;
+
+export const FaqSection = styled.div`
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   h1 {
+      font: 500 5rem Poppins;
+   }
+   p {
+      font: 300 3rem Roboto;
+      margin-bottom: 10rem;
+   }
+`;
+
+export const Question = styled.div`
+   border: 0.2rem var(--color-primary) solid;
+   border-radius: 1rem;
+   width: 80rem;
+   height: 12rem;
+   display: flex;
+   align-items: center;
+   padding: 3rem;
+
+   h1 {
+      font: 300 2.8rem Poppins;
+   }
+
+   & + div {
+      margin-top: 3rem;
+   }
+`;
+
+export const Footer = styled.div`
+   background: var(--color-background-footer);
+   height: 13rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 10rem;
+
+   a {
+      color: var(--color-text-in-primary);
+      text-decoration: none;
+   }
+
+   span {
+      font: 300 1.8rem Roboto;
+      color: var(--color-background-darker);
+   }
+
+   div {
+      a + a {
+         margin-left: 8rem;
       }
    }
 `;
