@@ -31,7 +31,7 @@ export default function Dashboard() {
             <Input name="email" placeholder="dino@pawee.space" />
 
             <span>Senha</span>
-            <Input name="email" placeholder="*******" />
+            <Input name="password" placeholder="*******" />
 
             <div>
               <input type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
