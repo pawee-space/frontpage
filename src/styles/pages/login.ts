@@ -39,7 +39,7 @@ export const Content = styled.div`
          justify-content: space-between;
          width: 90%;
 
-         label {
+         p {
             font: 300 1.3rem Roboto;
          }
 

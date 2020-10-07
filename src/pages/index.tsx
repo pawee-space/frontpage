@@ -4,6 +4,7 @@ import Head from 'next/head';
 import logoImg from '../assets/logo.svg';
 import logoAlphaImg from '../assets/logo-alpha.svg';
 import facebookImg from '../assets/facebook.svg';
+import githubImg from '../assets/github.svg';
 import twitterImg from '../assets/twitter.svg';
 import mockupImg from '../assets/mockup.svg';
 import dataMockupImg from '../assets/data-mockup.svg';
@@ -54,8 +55,8 @@ const Home: React.FunctionComponent = () => {
         <Header>
           <img src={logoImg} alt="Pawee" />
           <ButtonsContainer>
-            <button type="button">Entrar</button>
-            <button type="button">Cadastrar-se</button>
+            <a href="login">Entrar</a>
+            <a href="signup">Cadastrar-se</a>
           </ButtonsContainer>
         </Header>
 
@@ -136,8 +137,27 @@ const Home: React.FunctionComponent = () => {
         <a href="https://pawee.space/">Sobre</a>
         <a href="https://pawee.space/">Contato</a>
         <div>
-          <a href="https://facebook.com/paweespace" rel="noopener noreferrer" target="_blank"><img src={facebookImg} alt="Facebook" /></a>
-          <a href="https://instagram.com/PaweeSpace/" rel="noopener noreferrer" target="_blank"><img src={twitterImg} alt="Instagram" /></a>
+          <a
+            href="https://facebook.com/paweespace"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src={facebookImg} alt="Facebook" />
+          </a>
+          <a
+            href="https://instagram.com/PaweeSpace/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src={twitterImg} alt="Instagram" />
+          </a>
+          <a
+            href="https://github.com/Pawee-Space/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src={githubImg} alt="Github" />
+          </a>
         </div>
         <span>copyrigth 2020 © Pawee.Space</span>
       </Footer>

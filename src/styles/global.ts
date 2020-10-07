@@ -32,6 +32,8 @@ export default createGlobalStyle`
       --color-background-darker: #D4D3D3;
       --color-background-footer: #1C1C1C;
       --color-placeholders: #ACA9A9;
+      --color-dark-shadow: rgba(136, 136, 136, 0.2);
+      --color-purple-shadow: rgba(102, 51, 153, 0.2);
    }
 
    @media (min-width: 700px) {

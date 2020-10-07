@@ -16,12 +16,10 @@ export const Header = styled.div`
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   img {
-   }
 `;
 
 export const ButtonsContainer = styled.div`
-   button {
+   a {
       background: var(--color-primary);
       width: 13rem;
       height: 4.5rem;
@@ -29,6 +27,8 @@ export const ButtonsContainer = styled.div`
       border-radius: 0.5rem;
       border: 0.2rem var(--color-primary) solid;
       transition: background-color 0.2s linear;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
 
       &:hover{
          cursor: pointer;
@@ -36,7 +36,7 @@ export const ButtonsContainer = styled.div`
          color: var(--color-text-in-primary);
       }
 
-      & + button {
+      & + a {
          margin-left: 1rem;
          background: none;
          color: var(--color-primary);
@@ -176,7 +176,8 @@ export const FeatureSection = styled.div`
          background: var(--color-background);
          padding: 2.5rem 0;
          border-radius: 2rem;
-         box-shadow: 0 0 1rem 1rem rgba(136, 136, 136, 0.2);
+         box-shadow: 0 0 1rem 1rem var(--color-dark-shadow);
+         transition: box-shadow 0.2s;
 
          img {
             width: 10rem;
@@ -252,6 +253,10 @@ export const Footer = styled.div`
    a {
       color: var(--color-text-in-primary);
       text-decoration: none;
+
+      img {
+         height: 2.5rem
+      }
    }
 
    span {

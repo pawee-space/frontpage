@@ -18,7 +18,7 @@ export default function Dashboard() {
       </Head>
       <Container>
         <Aside>
-          <img src={wellcomeImg} alt="Pawee Bem-vindo" />
+          <a href="/"><img src={wellcomeImg} alt="Pawee Bem-vindo" /></a>
           <div>
             <img src={dinoImg} alt="Dino" />
             <p>O dino é o protetor dos animais da pawee.</p>
@@ -35,8 +35,8 @@ export default function Dashboard() {
 
             <div>
               <input type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
-              <label htmlFor="stayLoggedIn">Manter conectado</label>
-              <a href="https://a.com">Esqueceu sua senha?</a>
+              <p>Manter conectado</p>
+              <a href="forgot">Esqueceu sua senha?</a>
             </div>
 
             <div>
