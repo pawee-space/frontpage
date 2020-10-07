@@ -34,6 +34,24 @@ export const Content = styled.div`
          width: 90%;
       }
 
+      button {
+         margin: 5rem 0 1rem 0;
+         color: var(--color-text-in-primary);
+         border: 0.2rem var(--color-primary) solid;
+         width: 13rem;
+         height: 4.5rem;
+         border-radius: 0.5rem;
+         transition: background-color 0.2s linear;
+         color: var(--color-primary);
+
+         &:hover{
+            cursor: pointer;
+            background: var(--color-primary-dark);
+            color: var(--color-text-in-primary);
+         }
+
+      }
+
       div {
          margin-top: 1rem;
          display: flex;
@@ -42,12 +60,11 @@ export const Content = styled.div`
          width: 90%;
 
          p {
-            margin-left: 0.5rem;
             font: 300 1.3rem Roboto;
-            flex: 1;
          }
 
          a {
+            margin-left: 0.4rem;
             font: 300 1.3rem Roboto;
             text-decoration: none;
             color: var(--color-primary);
@@ -68,21 +85,6 @@ export const Content = styled.div`
 
             &:focus {
                border: 0.1rem var(--color-primary) solid;
-            }
-         }
-
-         button {
-            margin: 5rem 0 1rem 0;
-            background: var(--color-primary);
-            color: var(--color-text-in-primary);
-            width: 13rem;
-            height: 4.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s linear;
-
-            &:hover{
-               cursor: pointer;
-               background: var(--color-primary-dark);
             }
          }
 
@@ -115,7 +117,6 @@ export const Aside = styled.div`
 
       p {
          margin-left: 1.5rem;
-         max-width: 20rem;
       }
    }
 `;

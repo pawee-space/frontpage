@@ -11,10 +11,6 @@ export default createGlobalStyle`
       outline: none;
    }
 
-   body {
-      background: var(--color-background);
-      color: var(--color-text-base);
-   }
 
    body,
    input,
@@ -23,7 +19,12 @@ export default createGlobalStyle`
       font: 500 1.6rem Poppins;
       color: var(--color-text-base);
       border: none;
-}
+      background: none;
+   }
+   body {
+      background: var(--color-background);
+      color: var(--color-text-base);
+   }
 
    :root{
       --color-primary: #663399;

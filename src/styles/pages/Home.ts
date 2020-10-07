@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
    margin: 50px 45px 0 45px;
-   height: 100vh;
+   height: 80rem;
    display: grid;
    grid-template-columns: 50% 50%;
    grid-template-rows: 6rem auto;
@@ -16,6 +16,7 @@ export const Header = styled.div`
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+   align-items: center;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -90,7 +91,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const DataSection = styled.div`
-   height: 100vh;
+   height: 94rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -130,7 +131,7 @@ export const DataSection = styled.div`
 
 export const FeatureSection = styled.div`
    background: var(--color-background-darker);
-   height: 100vh;
+   height: 90rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -201,7 +202,7 @@ export const FeatureSection = styled.div`
 `;
 
 export const FaqSection = styled.div`
-   height: 100vh;
+   height: 90rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -255,7 +256,12 @@ export const Footer = styled.div`
       text-decoration: none;
 
       img {
-         height: 2.5rem
+      transition: transform 0.2s;
+         height: 2.5rem;
+
+         &:hover {
+            transform: translateY(-10px);
+         }
       }
    }
 

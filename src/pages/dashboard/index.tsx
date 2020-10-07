@@ -1,12 +1,12 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 export default function Dashboard() {
   return (
-    <div >
+    <div>
       <Head>
         <title>Pawee Space - Dashboard</title>
       </Head>
       <h1>Pawee Space</h1>
     </div>
-  )
+  );
 }

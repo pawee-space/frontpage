@@ -46,6 +46,11 @@ const Home: React.FunctionComponent = () => {
     },
   ];
 
+  const topFunction = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <>
       <Head>
@@ -69,7 +74,9 @@ const Home: React.FunctionComponent = () => {
               {' '}
               Ong’s e abrigos de animais, faça parte!
             </p>
-            <button type="button">Fazer Parte</button>
+            <a href="signup">
+              <button type="button">Fazer Parte</button>
+            </a>
           </div>
         </Main>
         <ImageContainer>
@@ -132,7 +139,9 @@ const Home: React.FunctionComponent = () => {
         ))}
       </FaqSection>
       <Footer>
-        <img src={logoAlphaImg} alt="Pawee" />
+        <button type="button" onClick={topFunction}>
+          <img src={logoAlphaImg} alt="Pawee" />
+        </button>
 
         <a href="https://pawee.space/">Sobre</a>
         <a href="https://pawee.space/">Contato</a>
