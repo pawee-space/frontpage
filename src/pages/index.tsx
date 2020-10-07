@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 
 import logoImg from '../assets/logo.svg';
 import logoAlphaImg from '../assets/logo-alpha.svg';
@@ -46,6 +47,9 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <>
+      <Head>
+        <title>Pawee Space</title>
+      </Head>
       <HomeContainer>
         <Header>
           <img src={logoImg} alt="Pawee" />

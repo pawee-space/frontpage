@@ -31,6 +31,7 @@ export default createGlobalStyle`
       --color-background: #ebebeb;
       --color-background-darker: #D4D3D3;
       --color-background-footer: #1C1C1C;
+      --color-placeholders: #ACA9A9;
    }
 
    @media (min-width: 700px) {
