@@ -64,6 +64,7 @@ export const Content = styled.div`
 
             &:checked {
                background-color: var(--color-primary);
+               border: 0.1rem var(--color-primary) solid;
             }
 
             &:focus {

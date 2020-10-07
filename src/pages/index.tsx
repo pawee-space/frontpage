@@ -74,7 +74,7 @@ const Home: React.FunctionComponent = () => {
               {' '}
               Ong’s e abrigos de animais, faça parte!
             </p>
-            <a href="signup">
+            <a href="dashboard">
               <button type="button">Fazer Parte</button>
             </a>
           </div>

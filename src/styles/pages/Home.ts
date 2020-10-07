@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-   margin: 50px 45px 0 45px;
+   margin: 5rem 4.5rem 0 4.5rem;
    height: 80rem;
    display: grid;
    grid-template-columns: 50% 50%;
