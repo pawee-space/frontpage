@@ -87,6 +87,8 @@ export const ImageContainer = styled.div`
    grid-area: right;
    img {
       margin: 13rem 0 0 7rem;
+      width: 34.871vw;
+      min-width: 45rem;
    }
 `;
 
