@@ -4,6 +4,7 @@ export const Container = styled.div`
    display: flex;
    height: 100vh;
    align-items: stretch;
+   background: var(--color-background-darker);
 `;
 
 export const Content = styled.div`
@@ -50,8 +51,21 @@ export const Content = styled.div`
          }
 
          input {
-            border: 0.1rem var(--color-background-darker) solid;
+            -webkit-appearance: none;
             border-radius: 1rem;
+            border: 0.1rem var(--color-background-darker) solid;
+            padding: 9px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+
+            &:checked {
+               background-color: var(--color-primary);
+            }
+
+            &:focus {
+               border: 0.1rem var(--color-primary) solid;
+            }
          }
 
          button {
@@ -87,10 +101,11 @@ export const Aside = styled.div`
    justify-content: flex-end;
    flex-direction: column;
    align-items: center;
-   margin-bottom: 5rem;
+   border-radius: 0 1.2rem 1.2rem 0;
+   background: var(--color-background);
 
    div {
-      margin-top: 30rem;
+      margin: 30rem 0 5rem 0;
       display: flex;
       align-items: center;
 

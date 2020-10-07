@@ -7,6 +7,10 @@ export default createGlobalStyle`
       box-sizing: border-box;
    }
 
+   *:focus {
+      outline: none;
+   }
+
    body {
       background: var(--color-background);
       color: var(--color-text-base);
