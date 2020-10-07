@@ -216,21 +216,29 @@ export const FaqSection = styled.div`
 `;
 
 export const Question = styled.div`
-   border: 0.2rem var(--color-primary) solid;
-   border-radius: 1rem;
-   width: 80rem;
-   height: 12rem;
-   display: flex;
-   align-items: center;
-   padding: 3rem;
+      border: 0.2rem var(--color-primary) solid;
+      border-radius: 1rem;
+      width: 80rem;
+      height: 12rem;
+      display: flex;
+      align-items: center;
+      padding: 3rem;
+      transition: transform 0.2s;
+      cursor: pointer;
 
-   h1 {
-      font: 300 2.8rem Poppins;
-   }
+      a {
+         font: 300 2.8rem Poppins;
+         text-decoration: none;
+         color: var(--color-text-base);
+      }
 
-   & + div {
-      margin-top: 3rem;
-   }
+      & + div {
+         margin-top: 3rem;
+      }
+
+      &:hover {
+         transform: translateX(10px);
+      }
 `;
 
 export const Footer = styled.div`

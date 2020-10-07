@@ -122,7 +122,7 @@ const Home: React.FunctionComponent = () => {
 
         {mock.map((question) => (
           <Question key={question.id}>
-            <h1>{question.message}</h1>
+            <a href={`https://pawee.space/faq/${question.id}`}>{question.message}</a>
           </Question>
         ))}
       </FaqSection>
