@@ -6,6 +6,7 @@ import logoAlphaImg from '../assets/logo-alpha.svg';
 import facebookImg from '../assets/facebook.svg';
 import githubImg from '../assets/github.svg';
 import twitterImg from '../assets/twitter.svg';
+import instagramImg from '../assets/instagram.svg';
 import mockupImg from '../assets/mockup.svg';
 import dataMockupImg from '../assets/data-mockup.svg';
 
@@ -20,7 +21,7 @@ import {
   FaqSection,
   Question,
   Footer,
-} from '../styles/pages/Home';
+} from '../styles/pages/home';
 
 const Home = () => {
   const mock = [
@@ -149,11 +150,18 @@ const Home = () => {
             <img src={facebookImg} alt="Facebook" />
           </a>
           <a
+            href="https://twitter.com/PaweeSpace/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src={twitterImg} alt="Twitter" />
+          </a>
+          <a
             href="https://instagram.com/PaweeSpace/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img src={twitterImg} alt="Instagram" />
+            <img src={instagramImg} alt="Instagram" />
           </a>
           <a
             href="https://github.com/Pawee-Space/"

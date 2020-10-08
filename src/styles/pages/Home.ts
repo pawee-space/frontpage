@@ -298,6 +298,9 @@ export const Footer = styled.div`
       cursor: pointer;
    }
    div {
+         display: flex;
+         justify-content: space-between;
+         width: 18%;
 
          a > img {
          transition: transform 0.2s;
@@ -312,11 +315,5 @@ export const Footer = styled.div`
    span {
       font: 300 1.8rem Roboto;
       color: var(--color-background-darker);
-   }
-
-   div {
-      display: flex;
-      justify-content: space-between;
-      width: 15%;
    }
 `;
