@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-   margin: 5rem 4.5rem 0 4.5rem;
+   /* margin: 5rem 4.5rem 0 4.5rem; */
    height: 80rem;
    display: grid;
    grid-template-columns: 50% 50%;
@@ -17,6 +17,7 @@ export const Header = styled.div`
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   margin: 5rem 4.5rem 0 4.5rem;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -51,6 +52,7 @@ export const Main = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
+   margin: 5rem 4.5rem 0 4.5rem;
 
    div {
       margin-top: -15rem;
@@ -293,15 +295,18 @@ export const Footer = styled.div`
    a {
       color: var(--color-text-in-primary);
       text-decoration: none;
+      cursor: pointer;
+   }
+   div {
 
-      img {
-      transition: transform 0.2s;
-         height: 2.5rem;
+         a > img {
+         transition: transform 0.2s;
+            height: 2.5rem;
 
-         &:hover {
-            transform: translateY(-10px);
+            &:hover {
+               transform: translateY(-10px);
+            }
          }
-      }
    }
 
    span {

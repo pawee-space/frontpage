@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Link } from 'react-scroll';
 
 import logoImg from '../assets/logo.svg';
 import logoAlphaImg from '../assets/logo-alpha.svg';
@@ -45,17 +46,12 @@ const Home = () => {
     },
   ];
 
-  const topFunction = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  };
-
   return (
     <>
       <Head>
         <title>Pawee Space</title>
       </Head>
-      <HomeContainer>
+      <HomeContainer id="top">
         <Header>
           <img src={logoImg} alt="Pawee" />
           <ButtonsContainer>
@@ -138,9 +134,9 @@ const Home = () => {
         ))}
       </FaqSection>
       <Footer>
-        <button type="button" onClick={topFunction}>
+        <Link to="top" smooth>
           <img src={logoAlphaImg} alt="Pawee" />
-        </button>
+        </Link>
 
         <a href="https://pawee.space/">Sobre</a>
         <a href="https://pawee.space/">Contato</a>
