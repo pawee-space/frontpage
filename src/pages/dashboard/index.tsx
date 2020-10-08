@@ -1,15 +1,15 @@
 import Head from 'next/head';
 
-import logoImg from '../../assets/logo.svg';
-import bellImg from '../../assets/bell.svg';
-import avatarImg from '../../assets/avatar-mockup.svg';
-import downArrowImg from '../../assets/down-arrow.svg';
+import logoImg from '@assets/logo.svg';
+import bellImg from '@assets/bell.svg';
+import avatarImg from '@assets/avatar-mockup.svg';
+import downArrowImg from '@assets/down-arrow.svg';
 
-import SlideContainer from '../../components/slide';
+import SlideContainer from '@components/slide';
 
 import {
   Container, Header, Main,
-} from '../../styles/pages/dashboard';
+} from '@styles/pages/dashboard';
 
 export default function Dashboard() {
   const user = {

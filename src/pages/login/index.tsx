@@ -2,11 +2,11 @@ import Head from 'next/head';
 import { useCallback } from 'react';
 import { Form } from '@unform/web';
 
-import wellcomeImg from '../../assets/welcome.svg';
-import dinoImg from '../../assets/dino.svg';
+import wellcomeImg from '@assets/welcome.svg';
+import dinoImg from '@assets/dino.svg';
 
-import { Container, Content, Aside } from '../../styles/pages/login';
-import { Input } from '../../components/input';
+import { Container, Content, Aside } from '@styles/pages/login';
+import { Input } from '@components/input';
 
 export default function Dashboard() {
   const handleSubmit = useCallback(() => {}, []);
