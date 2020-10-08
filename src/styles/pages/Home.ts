@@ -88,7 +88,7 @@ export const ImageContainer = styled.div`
    img {
       margin: 13rem 0 0 7rem;
       width: 34.871vw;
-      min-width: 45rem;
+      min-width: 28.6rem;
    }
 `;
 
@@ -102,6 +102,7 @@ export const DataSection = styled.div`
    h1 {
       font: 500 5rem Poppins;
       line-height: 7rem;
+      text-align: center;
    }
 
    p {
@@ -114,7 +115,7 @@ export const DataSection = styled.div`
    div {
       margin-top: 5rem;
       display: flex;
-      width: 120rem;
+      width: 70%;
       justify-content: space-between;
       align-items: center;
       div {
@@ -126,6 +127,24 @@ export const DataSection = styled.div`
 
          p {
             margin-top: 1.5rem;
+         }
+      }
+   }
+
+   @media (max-width: 1200px){
+      height: 140rem;
+
+      div {
+         flex-direction: column;
+         margin-top: 0;
+
+         div {
+            width: 60rem;
+            padding: 4rem 0;
+
+            & + div {
+               margin-left: 0rem;
+            }
          }
       }
    }
@@ -201,6 +220,24 @@ export const FeatureSection = styled.div`
          }
       }
    }
+
+   @media (max-width: 1200px){
+      height: 150rem;
+
+      div {
+         flex-direction: column;
+         margin-top: 5rem;
+
+         div {
+            width: 60rem;
+            padding: 4rem 0;
+
+            & + div {
+               margin-left: 0rem;
+            }
+         }
+      }
+   }
 `;
 
 export const FaqSection = styled.div`
@@ -251,7 +288,7 @@ export const Footer = styled.div`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 0 10rem;
+   padding: 0 10vw;
 
    a {
       color: var(--color-text-in-primary);
@@ -273,8 +310,8 @@ export const Footer = styled.div`
    }
 
    div {
-      a + a {
-         margin-left: 8rem;
-      }
+      display: flex;
+      justify-content: space-between;
+      width: 15%;
    }
 `;

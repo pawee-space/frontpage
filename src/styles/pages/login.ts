@@ -119,4 +119,9 @@ export const Aside = styled.div`
          max-width: 20rem;
       }
    }
+
+   @media (max-width: 950px){
+      display: none;
+   }
+
 `;
