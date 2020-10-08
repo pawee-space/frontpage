@@ -21,7 +21,7 @@ import {
   FaqSection,
   Question,
   Footer,
-} from '@styles/pages/home';
+} from '@styles/pages/welcome';
 
 const Home = () => {
   const mock = [
