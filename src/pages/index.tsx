@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'next/head';
 
 import logoImg from '../assets/logo.svg';
@@ -22,7 +21,7 @@ import {
   Footer,
 } from '../styles/pages/Home';
 
-const Home: React.FunctionComponent = () => {
+const Home = () => {
   const mock = [
     {
       id: 1,
