@@ -18,6 +18,7 @@ export const HomeContainer = styled.div`
       align-items: center;
       margin-bottom: 8rem;
    }
+
 `;
 
 export const Header = styled.div`
@@ -186,6 +187,10 @@ export const DataSection = styled.div`
             margin-top: 1.5rem;
          }
       }
+   }
+
+   a {
+
    }
 
    @media (max-width: 1200px){
@@ -472,18 +477,18 @@ export const Footer = styled.div`
       flex-direction: column;
       padding: 1rem 0;
 
+      a {
+         font: 500 1.2rem Poppins;
+      }
+
       .footer-logo {
          display: none;
+      }
 
-      }
-      .footer-nav {
-         a + a {
-            margin-left: 1rem;
-         }
-      }
       .footer-social {
          display: none;
       }
+
       .footer-copyright {
          margin-top: 1rem;
          font: 300 1rem Roboto;

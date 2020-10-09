@@ -146,10 +146,9 @@ const Home = () => {
           <img src={logoAlphaImg} alt="Pawee" />
         </Link>
 
-        <nav className="footer-nav">
-          <a href="https://pawee.space/">Sobre</a>
-          <a href="https://pawee.space/">Contato</a>
-        </nav>
+        <a href="https://pawee.space/about">Sobre</a>
+        <a href="https://pawee.space/contact">Contato</a>
+        <a href="https://pawee.space/faq">FAQ</a>
         <div className="footer-social">
           <a
             href="https://facebook.com/paweespace"
