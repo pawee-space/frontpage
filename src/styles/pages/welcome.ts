@@ -16,7 +16,7 @@ export const HomeContainer = styled.div`
       height: 37rem;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 7rem;
+      margin-bottom: 6rem;
    }
 `;
 
@@ -197,7 +197,7 @@ export const DataSection = styled.div`
 
          div {
             width: 60rem;
-            padding: 4rem 0;
+            margin: 4rem 0;
 
             & + div {
                margin-left: 0rem;
@@ -207,7 +207,26 @@ export const DataSection = styled.div`
    }
 
    @media(max-width: 850px) {
-      display: none;
+      margin: 0 2rem;
+      height: 94rem;
+
+      h1 {
+         font: 500 3rem Poppins;
+         line-height: 3rem;
+      }
+
+      p {
+         margin: 1.5rem 0;
+         font: 300 1.8rem Roboto;
+         max-width: none;
+      }
+
+      div {
+         & > div {
+            margin: 2rem 0;
+            width: auto;
+         }
+      }
    }
 `;
 
@@ -301,7 +320,41 @@ export const FeatureSection = styled.div`
    }
 
    @media(max-width: 850px) {
-      display: none;
+      height: auto;
+      padding: 4rem 2rem 6rem 2rem;
+
+      h1 {
+         font: 500 3rem Poppins;
+         line-height: 3rem;
+      }
+
+      p {
+         margin: 1.5rem 0;
+         font: 300 1.8rem Roboto;
+         max-width: none;
+      }
+
+      button {
+         display: none;
+      }
+
+      div {
+         margin-top: 1rem;
+         div {
+            width: 23rem;
+            height: 30rem;
+            padding: 4rem 0;
+
+            & + div {
+               margin-top: 5rem;
+               margin-left: 0rem;
+            }
+
+            p {
+               width: auto;
+            }
+         }
+      }
    }
 `;
 
