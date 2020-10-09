@@ -142,13 +142,15 @@ const Home = () => {
         ))}
       </FaqSection>
       <Footer>
-        <Link to="top" smooth>
+        <Link to="top" smooth className="footer-logo">
           <img src={logoAlphaImg} alt="Pawee" />
         </Link>
 
-        <a href="https://pawee.space/">Sobre</a>
-        <a href="https://pawee.space/">Contato</a>
-        <div>
+        <nav className="footer-nav">
+          <a href="https://pawee.space/">Sobre</a>
+          <a href="https://pawee.space/">Contato</a>
+        </nav>
+        <div className="footer-social">
           <a
             href="https://facebook.com/paweespace"
             rel="noopener noreferrer"
@@ -178,7 +180,7 @@ const Home = () => {
             <img src={githubImg} alt="Github" />
           </a>
         </div>
-        <span>copyrigth 2020 © Pawee.Space</span>
+        <span className="footer-copyright">copyrigth 2020 © Pawee.Space</span>
       </Footer>
     </>
   );
