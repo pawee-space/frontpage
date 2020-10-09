@@ -368,13 +368,27 @@ export const FaqSection = styled.div`
    h1 {
       font: 500 5rem Poppins;
    }
+
    p {
       font: 300 3rem Roboto;
       margin-bottom: 10rem;
    }
 
    @media(max-width: 850px) {
-      display: none;
+      height: auto;
+      text-align: center;
+      padding: 4rem 1.5rem;
+
+      h1 {
+         font: 500 3rem Poppins;
+         line-height: 3rem;
+      }
+
+      p {
+         margin: 1.5rem 0;
+         font: 300 1.8rem Roboto;
+         max-width: none;
+      }
    }
 `;
 
@@ -404,7 +418,15 @@ export const Question = styled.div`
    }
 
    @media(max-width: 850px) {
-      display: none;
+      width: 80%;
+      height: 11rem;
+      justify-content: center;
+
+      a {
+         font: 300 1.6rem Poppins;
+         text-decoration: none;
+         color: var(--color-text-base);
+      }
    }
 `;
 
