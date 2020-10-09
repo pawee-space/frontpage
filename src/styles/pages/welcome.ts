@@ -201,6 +201,10 @@ export const DataSection = styled.div`
          }
       }
    }
+
+   @media(max-width: 850px) {
+      display: none;
+   }
 `;
 
 export const FeatureSection = styled.div`
@@ -291,6 +295,10 @@ export const FeatureSection = styled.div`
          }
       }
    }
+
+   @media(max-width: 850px) {
+      display: none;
+   }
 `;
 
 export const FaqSection = styled.div`
@@ -307,32 +315,40 @@ export const FaqSection = styled.div`
       font: 300 3rem Roboto;
       margin-bottom: 10rem;
    }
+
+   @media(max-width: 850px) {
+      display: none;
+   }
 `;
 
 export const Question = styled.div`
-      border: 0.2rem var(--color-primary) solid;
-      border-radius: 1rem;
-      width: 80rem;
-      height: 12rem;
-      display: flex;
-      align-items: center;
-      padding: 3rem;
-      transition: transform 0.2s;
-      cursor: pointer;
+   border: 0.2rem var(--color-primary) solid;
+   border-radius: 1rem;
+   width: 80rem;
+   height: 12rem;
+   display: flex;
+   align-items: center;
+   padding: 3rem;
+   transition: transform 0.2s;
+   cursor: pointer;
 
-      a {
-         font: 300 2.8rem Poppins;
-         text-decoration: none;
-         color: var(--color-text-base);
-      }
+   a {
+      font: 300 2.8rem Poppins;
+      text-decoration: none;
+      color: var(--color-text-base);
+   }
 
-      & + div {
-         margin-top: 3rem;
-      }
+   & + div {
+      margin-top: 3rem;
+   }
 
-      &:hover {
-         transform: translateX(10px);
-      }
+   &:hover {
+      transform: translateX(10px);
+   }
+
+   @media(max-width: 850px) {
+      display: none;
+   }
 `;
 
 export const Footer = styled.div`
@@ -366,5 +382,9 @@ export const Footer = styled.div`
    span {
       font: 300 1.8rem Roboto;
       color: var(--color-background-darker);
+   }
+
+   @media(max-width: 850px) {
+      display: none;
    }
 `;

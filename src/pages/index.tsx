@@ -77,7 +77,7 @@ const Home = () => {
               {' '}
               Ong’s e abrigos de animais, faça parte!
             </p>
-            <a href="dashboard">
+            <a href="signup">
               <button type="button">Fazer Parte</button>
             </a>
           </div>
