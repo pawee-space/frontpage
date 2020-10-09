@@ -454,7 +454,7 @@ export const Footer = styled.div`
    div {
          display: flex;
          justify-content: space-between;
-         width: 18%;
+         width: 20%;
 
          a > img {
          transition: transform 0.2s;
