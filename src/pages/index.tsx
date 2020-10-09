@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 
 import logoImg from '@assets/logo.svg';
 import logoAlphaImg from '@assets/logo-alpha.svg';
+import dinoImg from '@assets/dino-entire.svg';
 import facebookImg from '@assets/facebook.svg';
 import githubImg from '@assets/github.svg';
 import twitterImg from '@assets/twitter.svg';
@@ -13,6 +14,7 @@ import dataMockupImg from '@assets/data-mockup.svg';
 import {
   HomeContainer,
   Header,
+  HeaderMobile,
   ButtonsContainer,
   Main,
   ImageContainer,
@@ -43,7 +45,7 @@ const Home = () => {
     {
       id: 4,
       author: 'Arthur',
-      message: 'Eu posso colocar algum doggo/cato a venda?',
+      message: 'Eu posso colocar algum doggo ou cato a venda?',
     },
   ];
 
@@ -60,6 +62,11 @@ const Home = () => {
             <a href="signup">Cadastrar-se</a>
           </ButtonsContainer>
         </Header>
+
+        <HeaderMobile>
+          <img src={dinoImg} alt="Dino" />
+          <img src={logoImg} alt="Pawee" />
+        </HeaderMobile>
 
         <Main>
           <div>

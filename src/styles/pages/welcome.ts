@@ -9,6 +9,15 @@ export const HomeContainer = styled.div`
    grid-template-areas:
       "top top"
       "left right";
+
+   @media(max-width: 850px) {
+      display: flex;
+      flex-direction: column;
+      height: 37rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7rem;
+   }
 `;
 
 export const Header = styled.div`
@@ -18,6 +27,23 @@ export const Header = styled.div`
    justify-content: space-between;
    align-items: center;
    margin: 5rem 4.5rem 0 4.5rem;
+
+   @media(max-width: 850px) {
+      display: none;
+   }
+`;
+
+export const HeaderMobile = styled.div`
+   margin-top: 1rem;
+   display: flex;
+   align-items: center;
+
+   img + img {
+      margin-left: 1rem;
+   }
+   @media(min-width: 850px) {
+      display: none;
+   }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -83,6 +109,27 @@ export const Main = styled.div`
          }
       }
    }
+   @media(max-width: 850px) {
+      div {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-between;
+         height: 22rem;
+      }
+
+      div > h1 {
+         font: 500 3.5rem Poppins;
+         line-height: 3rem;
+         text-align: center;
+      }
+
+      div > p {
+         text-align: center;
+         font: 300 1.5rem Roboto;
+      }
+   }
+
 `;
 
 export const ImageContainer = styled.div`
@@ -91,6 +138,10 @@ export const ImageContainer = styled.div`
       margin: 13rem 0 0 7rem;
       width: 34.871vw;
       min-width: 28.6rem;
+   }
+
+   @media(max-width: 850px) {
+      display: none;
    }
 `;
 

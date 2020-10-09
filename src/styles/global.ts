@@ -42,7 +42,7 @@ export default createGlobalStyle`
       --color-purple-shadow: rgba(102, 51, 153, 0.2);
    }
 
-   @media (min-width: 700px) {
+   @media (min-width: 850px) {
       :root{
          font-size: 62.5%
       }
