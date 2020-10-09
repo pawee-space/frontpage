@@ -110,26 +110,30 @@ export const Main = styled.div`
       }
    }
    @media(max-width: 850px) {
+      margin: 5rem 2rem 0 2rem;
       div {
          display: flex;
          flex-direction: column;
          align-items: center;
          justify-content: space-between;
          height: 22rem;
-      }
 
-      div > h1 {
-         font: 500 3.5rem Poppins;
-         line-height: 3rem;
-         text-align: center;
-      }
+         h1 {
+            font: 500 3.5rem Poppins;
+            line-height: 3rem;
+            text-align: center;
+         }
 
-      div > p {
-         text-align: center;
-         font: 300 1.5rem Roboto;
+         p {
+            text-align: center;
+            font: 300 1.5rem Roboto;
+         }
+
+         a {
+            margin-top: 2rem;
+         }
       }
    }
-
 `;
 
 export const ImageContainer = styled.div`
