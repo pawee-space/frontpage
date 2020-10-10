@@ -452,18 +452,18 @@ export const Footer = styled.div`
       cursor: pointer;
    }
    div {
-         display: flex;
-         justify-content: space-between;
-         width: 20%;
+      display: flex;
+      justify-content: space-between;
+      width: 20%;
 
-         a > img {
-         transition: transform 0.2s;
-            height: 2.5rem;
+      a > img {
+      transition: transform 0.2s;
+         height: 2.5rem;
 
-            &:hover {
-               transform: translateY(-10px);
-            }
+         &:hover {
+            transform: translateY(-10px);
          }
+      }
    }
 
    span {
