@@ -27,6 +27,7 @@
         "react-hooks"
     ],
     "rules": {
+      "linebreak-style": ["error", "windows"],
       "react/react-in-jsx-scope": "off",
       "no-use-before-define": "off",
       "react/jsx-props-no-spreading": "off",

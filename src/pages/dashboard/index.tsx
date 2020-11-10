@@ -5,7 +5,7 @@ import bellImg from '@assets/bell.svg';
 import avatarImg from '@assets/avatar-mockup.svg';
 import downArrowImg from '@assets/down-arrow.svg';
 
-import SlideContainer from '@components/slide';
+import { Slider } from 'pawee-image-slider';
 
 import {
   Container, Header, Main,
@@ -46,7 +46,7 @@ export default function Dashboard() {
 
         <Main>
           <h1>Titulo Legal</h1>
-          <SlideContainer />
+          <Slider />
         </Main>
       </Container>
     </div>

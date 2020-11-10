@@ -97,6 +97,26 @@ export const Content = styled.div`
 
       }
    }
+
+   @media (max-width: 850px){
+
+      form {
+         height: auto;
+         padding: 2rem 2.5rem;
+         width: 100vw;
+         border-radius: 0;
+      }
+   }
+
+   @media (max-width: 530px){
+      form {
+         div > p, div > a {
+            font: 300 1rem Roboto;
+         }
+      }
+   }
+
+
 `;
 
 export const Aside = styled.div`

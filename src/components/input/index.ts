@@ -6,6 +6,7 @@ export const Input = styled.input`
    border-radius: 0.5rem;
    width: 90%;
    height: 5rem;
+   min-height: 4rem;
    padding-left: 1rem;
    font: 500 1.3rem Roboto;
 

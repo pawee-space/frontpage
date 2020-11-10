@@ -1,0 +1,15 @@
+{
+   "recommendations": [
+       "naumovs.color-highlight", // Color Highlight
+       "dracula-theme.theme-dracula", // Dracula Theme
+       "pkief.material-icon-theme", // Material Icon Theme
+       "editorconfig.editorconfig", // EditorConfig for VS Code
+       "ritwickdey.liveserver", // Live Server
+       "ms-vsliveshare.vsliveshare", // Live Share
+       "icrawl.discord-vscode", // Discord Presence
+       "ritwickdey.live-sass", // Live Sass Compiler
+       "jpoissonnier.vscode-styled-components", // vscode-styled-components
+       "dbaeumer.vscode-eslint", // Eslint
+       "wix.vscode-import-cost" // Import Cost
+   ]
+}
