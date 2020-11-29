@@ -47,12 +47,22 @@ export const Header = styled.div`
    }
 `;
 export const Main = styled.div`
+   width: 100%;
+   height: 100rem;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+
    h1 {
       margin-top: 5rem;
       font: 500 4rem Poppins;
    }
 
-   div {
-      margin-top: 3rem;
-   }
+`;
+
+export const SlideContainer = styled.div`
+   position: relative;
+   width: 100%;
+   height: 65rem;
 `;
