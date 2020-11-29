@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { Link } from 'react-scroll';
+import Lottie from 'react-lottie';
+import { useState } from 'react';
 
 import logoImg from '@assets/logo.svg';
 import logoAlphaImg from '@assets/logo-alpha.svg';
@@ -8,7 +10,6 @@ import facebookImg from '@assets/facebook.svg';
 import githubImg from '@assets/github.svg';
 import twitterImg from '@assets/twitter.svg';
 import instagramImg from '@assets/instagram.svg';
-import mockupImg from '@assets/mockup.svg';
 import dataMockupImg from '@assets/data-mockup.svg';
 
 import {
@@ -25,7 +26,23 @@ import {
   Footer,
 } from '@styles/pages/welcome';
 
+import buldogAnimation from '../assets/lottie/french-buldog.json';
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: buldogAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
+
 const Home = () => {
+  const [animationState, setAnimationState] = useState({
+    isStopped: false,
+    isPaused: false,
+  });
+
   const mock = [
     {
       id: 1,
@@ -83,7 +100,13 @@ const Home = () => {
           </div>
         </Main>
         <ImageContainer>
-          <img src={mockupImg} alt="Pawee" />
+          <Lottie
+            options={defaultOptions}
+            height={700}
+            width={700}
+            isStopped={animationState.isStopped}
+            isPaused={animationState.isPaused}
+          />
         </ImageContainer>
       </HomeContainer>
       <DataSection>

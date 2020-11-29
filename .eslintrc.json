@@ -27,6 +27,7 @@
         "react-hooks"
     ],
     "rules": {
+      "no-unused-vars": "off",
       "linebreak-style": ["error", "windows"],
       "react/react-in-jsx-scope": "off",
       "no-use-before-define": "off",
