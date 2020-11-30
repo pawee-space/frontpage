@@ -168,6 +168,13 @@ export const DataSection = styled.div`
       color: var(--color-text-complement)
    }
 
+   span {
+      font: 400 1.2rem Poppins;
+      text-align: center;
+      color: var(--color-text-inactive);
+   }
+
+
    div {
       margin-top: 5rem;
       display: flex;

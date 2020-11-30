@@ -11,7 +11,12 @@ import facebookImg from '@assets/facebook.svg';
 import githubImg from '@assets/github.svg';
 import twitterImg from '@assets/twitter.svg';
 import instagramImg from '@assets/instagram.svg';
-import dataMockupImg from '@assets/data-mockup.svg';
+import dataImg1 from '@assets/data-image-1.svg';
+import dataImg2 from '@assets/data-image-2.svg';
+import dataImg3 from '@assets/data-image-3.svg';
+import featureImage1 from '@assets/feature-image-1.svg';
+import featureImage2 from '@assets/feature-image-2.svg';
+import featureImage3 from '@assets/feature-image-3.svg';
 
 import {
   HomeContainer,
@@ -50,22 +55,22 @@ const Home = () => {
     {
       id: 1,
       author: 'Arthur',
-      message: 'Eu posso adotar um papagaio?',
+      message: 'Como faço para cadastrar minha Ong?',
     },
     {
       id: 2,
       author: 'Victória',
-      message: 'Como faço para cadastrar minha Ong?',
+      message: 'Como doar para uma organização?',
     },
     {
       id: 3,
       author: 'Victória',
-      message: 'Como doar para uma Ong?',
+      message: 'O que é necessário para adotar um pet?',
     },
     {
       id: 4,
       author: 'Arthur',
-      message: 'Eu posso colocar algum doggo ou cato a venda?',
+      message: 'Posso cadastrar um animal mesmo não sendo uma Ong?',
     },
   ];
 
@@ -113,48 +118,53 @@ const Home = () => {
         </ImageContainer>
       </HomeContainer>
       <DataSection>
-        <h1>Dados importantes que nos deixam triste</h1>
-        <p>Quanto maior os números mais animais em situação de risco e abandono.</p>
+        <h1>Um aplicativo, um novo jeito de ajudar!</h1>
+        <p>Dados que motivam a Pawee a lutar pelas Ong’s e animais.</p>
 
         <div>
           <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>+ 55</h1>
-            <p>Pequena Descrição</p>
+            <img src={dataImg1} alt="Data" />
+            <h1>+482%</h1>
+            <p>Denúncias de maus tratos em 2020.</p>
+            <span>SaferNet Brasil.</span>
           </div>
           <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>+ 15,8%</h1>
-            <p>Pequena Descrição</p>
+            <img src={dataImg2} alt="Data" />
+            <h1>90%</h1>
+            <p>De queda nas arrecadações.</p>
+            <span>Viviane Lima, Lar Tintin.</span>
           </div>
           <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>3 anos</h1>
-            <p>Pequena Descrição</p>
+            <img src={dataImg3} alt="Data" />
+            <h1>+40%</h1>
+            <p>Procure de devoluções de animais</p>
+            <span>Vicente Neto, Ong Cão sem Dono</span>
           </div>
         </div>
       </DataSection>
       <BackToTopContainer>
         <FeatureSection>
-          <h1>Veja o que a Pawee Space pode oferecer as Ong’s e usuários. </h1>
+          <h1>São dezenas de recursos e ferramentas.</h1>
           <p>Para aproveitar ainda mais, faça parte dessa rede.</p>
           <button type="button">Fazer Parte</button>
 
           <div>
             <div>
-              <img src={dataMockupImg} alt="Data" />
+              <img src={featureImage1} alt="Data" />
               <h1>Mural</h1>
-              <p>Breve descrição da Funcionalidade.</p>
+              <p>Veja todas as postagens das Ong’s em um local só!</p>
             </div>
             <div>
-              <img src={dataMockupImg} alt="Data" />
-              <h1>Mural</h1>
-              <p>Breve descrição da Funcionalidade.</p>
+              <img src={featureImage2} alt="Data" />
+              <h1>Perfis</h1>
+              <p>Veja fotos, informações e muito mais! </p>
             </div>
             <div>
-              <img src={dataMockupImg} alt="Data" />
-              <h1>Mural</h1>
-              <p>Breve descrição da Funcionalidade.</p>
+              <img src={featureImage3} alt="Data" />
+              <h1>Segurança</h1>
+              <p>
+                Mais segurança no processo de doação.
+              </p>
             </div>
           </div>
         </FeatureSection>
