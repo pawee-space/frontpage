@@ -120,7 +120,7 @@ export const Container = styled.div<ContainerProps>`
             content: '#';
          }
 
-         color: var(--color-text-unactive);
+         color: var(--color-text-inactive);
       }
    }
 `;

@@ -31,7 +31,7 @@ export default createGlobalStyle`
       --color-primary-dark: #5C2E8A;
       --color-primary-darker: #52297A;
       --color-text-base: #121212;
-      --color-text-unactive: #707070;
+      --color-text-inactive: #707070;
       --color-separator: #CCCCCC;
       --color-text-in-primary: #ffffff;
       --color-text-complement: #444444;

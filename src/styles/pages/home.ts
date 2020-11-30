@@ -32,7 +32,7 @@ export const Header = styled.div<HeaderProps>`
    button {
       font: 500 2rem Poppins;
       text-decoration: none;
-      color: var(--color-text-unactive);
+      color: var(--color-text-inactive);
 
       &:hover {
          cursor: pointer;
@@ -157,7 +157,7 @@ export const Filter = styled.div`
    }
 
    svg {
-      color: var(--color-text-unactive);
+      color: var(--color-text-inactive);
       stroke-width: 0.2rem;
       font-size: 2rem;
    }
@@ -183,7 +183,7 @@ export const SearchInput = styled.div`
    }
 
    svg {
-      color: var(--color-text-unactive);
+      color: var(--color-text-inactive);
       stroke-width: 0.2rem;
       font-size: 2rem;
    }
