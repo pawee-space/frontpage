@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 export const HomeContainer = styled.div`
    /* margin: 5rem 4.5rem 0 4.5rem; */
    height: 80rem;
    display: grid;
    grid-template-columns: 50% 50%;
-   grid-template-rows: 6rem auto;
+   grid-template-rows: 10rem auto;
    grid-template-areas:
       "top top"
       "left right";
@@ -139,11 +140,7 @@ export const Main = styled.div`
 
 export const ImageContainer = styled.div`
    grid-area: right;
-   img {
-      margin: 13rem 0 0 7rem;
-      width: 34.871vw;
-      min-width: 28.6rem;
-   }
+   padding-right: 10rem;
 
    @media(max-width: 850px) {
       display: none;
@@ -242,6 +239,7 @@ export const FeatureSection = styled.div`
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   position: relative;
 
    h1 {
       font: 500 4.5rem Poppins;
@@ -365,6 +363,39 @@ export const FeatureSection = styled.div`
    }
 `;
 
+export const BackToTopContainer = styled.div`
+   position: relative;
+   width: auto;
+   height: auto;
+`;
+export const BackToTop = styled(Link)`
+   position: -webkit-sticky;
+   position: sticky;
+   background: var(--color-background);
+   width: 5rem;
+   height: 5rem;
+   border-radius: 2.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 0 0.5rem 0.5rem var(--color-dark-shadow);
+   bottom: 3rem;
+   margin: 2rem 4rem;
+
+   &:hover {
+      cursor: pointer;
+      svg {
+         color: var(--color-primary);
+      }
+   }
+
+   svg {
+      font-size: 3rem;
+      color: var(--color-text-complement);
+   }
+
+`;
+
 export const FaqSection = styled.div`
    height: 90rem;
    display: flex;
@@ -461,7 +492,7 @@ export const Footer = styled.div`
          height: 2.5rem;
 
          &:hover {
-            transform: translateY(-10px);
+            transform: translateY(-0.3rem);
          }
       }
    }

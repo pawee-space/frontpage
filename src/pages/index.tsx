@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Link } from 'react-scroll';
 import Lottie from 'react-lottie';
 import { useState } from 'react';
+import { FiChevronUp } from 'react-icons/fi';
 
 import logoImg from '@assets/logo.svg';
 import logoAlphaImg from '@assets/logo-alpha.svg';
@@ -24,6 +25,8 @@ import {
   FaqSection,
   Question,
   Footer,
+  BackToTop,
+  BackToTopContainer,
 } from '@styles/pages/welcome';
 
 import buldogAnimation from '../assets/lottie/french-buldog.json';
@@ -131,39 +134,45 @@ const Home = () => {
           </div>
         </div>
       </DataSection>
-      <FeatureSection>
-        <h1>Veja o que a Pawee Space pode oferecer as Ong’s e usuários. </h1>
-        <p>Para aproveitar ainda mais, faça parte dessa rede.</p>
-        <button type="button">Fazer Parte</button>
+      <BackToTopContainer>
+        <FeatureSection>
+          <h1>Veja o que a Pawee Space pode oferecer as Ong’s e usuários. </h1>
+          <p>Para aproveitar ainda mais, faça parte dessa rede.</p>
+          <button type="button">Fazer Parte</button>
 
-        <div>
           <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>Mural</h1>
-            <p>Breve descrição da Funcionalidade.</p>
+            <div>
+              <img src={dataMockupImg} alt="Data" />
+              <h1>Mural</h1>
+              <p>Breve descrição da Funcionalidade.</p>
+            </div>
+            <div>
+              <img src={dataMockupImg} alt="Data" />
+              <h1>Mural</h1>
+              <p>Breve descrição da Funcionalidade.</p>
+            </div>
+            <div>
+              <img src={dataMockupImg} alt="Data" />
+              <h1>Mural</h1>
+              <p>Breve descrição da Funcionalidade.</p>
+            </div>
           </div>
-          <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>Mural</h1>
-            <p>Breve descrição da Funcionalidade.</p>
-          </div>
-          <div>
-            <img src={dataMockupImg} alt="Data" />
-            <h1>Mural</h1>
-            <p>Breve descrição da Funcionalidade.</p>
-          </div>
-        </div>
-      </FeatureSection>
-      <FaqSection>
-        <h1>Perguntas Frequentes</h1>
-        <p>Tire alguma dúvidas com o nosso FAQ.</p>
+        </FeatureSection>
+        <FaqSection>
+          <h1>Perguntas Frequentes</h1>
+          <p>Tire alguma dúvidas com o nosso FAQ.</p>
 
-        {mock.map((question) => (
-          <Question key={question.id}>
-            <a href={`https://pawee.space/faq/${question.id}`}>{question.message}</a>
-          </Question>
-        ))}
-      </FaqSection>
+          {mock.map((question) => (
+            <Question key={question.id}>
+              <a href={`https://pawee.space/faq/${question.id}`}>{question.message}</a>
+            </Question>
+          ))}
+        </FaqSection>
+
+        <BackToTop to="top" smooth>
+          <FiChevronUp />
+        </BackToTop>
+      </BackToTopContainer>
       <Footer>
         <Link to="top" smooth className="footer-logo">
           <img src={logoAlphaImg} alt="Pawee" />
@@ -202,7 +211,7 @@ const Home = () => {
             <img src={githubImg} alt="Github" />
           </a>
         </div>
-        <span className="footer-copyright">copyrigth 2020 © Pawee.Space</span>
+        <span className="footer-copyright">copyright 2020 © Pawee.Space</span>
       </Footer>
     </>
   );
