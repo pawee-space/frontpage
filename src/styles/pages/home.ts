@@ -118,9 +118,83 @@ export const SlideContainer = styled.div`
 // Board
 
 export const BoardContainer = styled.div`
+   width: 85%;
+   height: auto;
+   margin-top: 6rem;
+   display: flex;
+   flex-direction: column;
 
+   h1 {
+      margin-top: 3rem;
+      color: var(--color-text-base);
+      font: 500 2.5rem Poppins;
+   }
 `;
 
+export const InputsContainer = styled.div`
+   display: flex;
+   flex-direction: row;
+`;
+export const Filter = styled.div`
+   background: var(--color-background-boxes);
+   width: auto;
+   height: 4rem;
+   border-radius: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 1.5rem;
+   margin-left: 2rem;
+
+   &:hover {
+      cursor: not-allowed;
+   }
+
+   p {
+      color: var(--color-placeholders-box);
+      font: 400 1.4rem Poppins;
+      margin: 0 2rem;
+   }
+
+   svg {
+      color: var(--color-text-unactive);
+      stroke-width: 0.2rem;
+      font-size: 2rem;
+   }
+`;
+
+export const SearchInput = styled.div`
+   background: var(--color-background-boxes);
+   width: auto;
+   height: 4rem;
+   border-radius: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 1.5rem;
+
+   input {
+      margin-left: 2rem;
+
+      &::placeholder {
+         color: var(--color-placeholders-box);
+         font: 400 1.4rem Poppins;
+      }
+   }
+
+   svg {
+      color: var(--color-text-unactive);
+      stroke-width: 0.2rem;
+      font-size: 2rem;
+   }
+`;
+
+export const Posts = styled.div`
+   width: 100%;
+   height: 10rem;
+   padding: 10rem;
+   background: pink;
+`;
 // About
 
 export const AboutContainer = styled.div`
