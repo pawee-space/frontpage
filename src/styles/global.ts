@@ -45,6 +45,19 @@ export default createGlobalStyle`
       --color-purple-shadow: rgba(102, 51, 153, 0.2);
    }
 
+   ::-webkit-scrollbar {
+      width: 0.7rem;
+   }
+   ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 0.5rem;
+   }
+   ::-webkit-scrollbar-thumb {
+      background: var(--color-placeholders);
+      border-radius: 0.5rem;
+   }
+   ::-webkit-scrollbar-corner { background: transparent; }
+
    @media (min-width: 850px) {
       :root{
          font-size: 62.5%
