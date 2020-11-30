@@ -190,10 +190,10 @@ export const SearchInput = styled.div`
 `;
 
 export const Posts = styled.div`
+   margin: 5rem 0;
    width: 100%;
-   height: 10rem;
-   padding: 10rem;
-   background: pink;
+   height: 150rem;
+   overflow-Y: scroll;
 `;
 // About
 

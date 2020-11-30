@@ -141,6 +141,7 @@ export const Main = styled.div`
 export const ImageContainer = styled.div`
    grid-area: right;
    padding-right: 10rem;
+   overflow: hidden;
 
    @media(max-width: 850px) {
       display: none;
