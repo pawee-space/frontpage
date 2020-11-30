@@ -6,15 +6,6 @@ import { FiSearch, FiFilter, FiChevronDown } from 'react-icons/fi';
 import PostPreview from '../../components/PostPreview';
 
 export default function Board() {
-  const options = [
-    {
-      value: 'cats', label: 'Gatos', color: '#00B8D9', isFixed: true,
-    },
-    { value: 'dogs', label: 'Cachorros', color: '#0052CC' },
-    {
-      value: 'birbs', label: 'Pássaros', color: '#5243AA', isDisabled: true,
-    },
-  ];
   return (
     <BoardContainer>
       <InputsContainer>
