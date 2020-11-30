@@ -137,8 +137,8 @@ const Home = () => {
           <div>
             <img src={dataImg3} alt="Data" />
             <h1>+40%</h1>
-            <p>Procure de devoluções de animais</p>
-            <span>Vicente Neto, Ong Cão sem Dono</span>
+            <p>Procura de devoluções de animais.</p>
+            <span>Vicente Neto, Ong Cão sem Dono.</span>
           </div>
         </div>
       </DataSection>
