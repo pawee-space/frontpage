@@ -6,10 +6,12 @@ const signIn = async ({ email, password }) => {
     password,
   });
 
-  const { token } = response.data;
+  const { token, name } = response.data;
+
+  console.log('logged as ', name);
 
   localStorage.setItem('@PaweeSpace:token', token);
-//   localStorage.setItem('@PaweeSpace:user', JSON.stringify(user));
+  localStorage.setItem('@PaweeSpace:user', JSON.stringify(name));
 };
 
 export default signIn;

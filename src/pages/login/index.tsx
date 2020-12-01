@@ -32,7 +32,6 @@ export default function Dashboard() {
       });
 
       // sign in
-      console.log(data);
       signIn(data);
 
       router.push('/home');
