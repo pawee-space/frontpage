@@ -6,7 +6,7 @@ import wellcomeImg from '@assets/welcome.svg';
 import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/signup';
-import { Input } from '@components/input';
+import Input from '@components/input';
 
 export default function Dashboard() {
   const handleSubmit = useCallback(() => {}, []);

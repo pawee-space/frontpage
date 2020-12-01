@@ -1,15 +1,44 @@
 import Head from 'next/head';
 import { useCallback } from 'react';
 import { Form } from '@unform/web';
+import * as Yup from 'yup';
 
 import wellcomeImg from '@assets/welcome.svg';
 import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/login';
-import { Input } from '@components/input';
+import Input from '@components/input';
+
+interface SignInFormData {
+   email: string;
+   password: string;
+}
 
 export default function Dashboard() {
-  const handleSubmit = useCallback(() => {}, []);
+  const handleSubmit = useCallback(async (data: SignInFormData) => {
+    console.log(data);
+    try {
+      const schema = Yup.object().shape({
+        email: Yup.string()
+          .required('Email required')
+          .email('Insert a valid email'),
+        password: Yup.string().required('Password required'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      // sign in
+      console.log(data);
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        // const errors = getValidationErrors(error);
+
+        console.log(error);
+      }
+    }
+  }, []);
 
   return (
     <div>
