@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useCallback } from 'react';
+import { useRouter } from 'next/router';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -8,6 +9,7 @@ import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/login';
 import Input from '@components/input';
+import signIn from '../../hooks/auth';
 
 interface SignInFormData {
    email: string;
@@ -15,8 +17,8 @@ interface SignInFormData {
 }
 
 export default function Dashboard() {
+  const router = useRouter();
   const handleSubmit = useCallback(async (data: SignInFormData) => {
-    console.log(data);
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
@@ -31,6 +33,9 @@ export default function Dashboard() {
 
       // sign in
       console.log(data);
+      signIn(data);
+
+      router.push('/home');
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         // const errors = getValidationErrors(error);
