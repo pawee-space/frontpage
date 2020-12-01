@@ -1,7 +1,7 @@
 import api from '../services/api';
 
 const signIn = async ({ email, password }) => {
-  const response = await api.post('sessions', {
+  const response = await api.post('authentication', {
     email,
     password,
   });
