@@ -1,8 +1,11 @@
-import { Slider } from 'pawee-image-slider';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { useState } from 'react';
 
 import {
-  Main, SlideContainer,
+  Main, SlideContainer, OngsHeader,
 } from '@styles/pages/home';
+
+import OngBillBoard from '../../components/OngBillBoard';
 
 const data = [
   {
@@ -40,14 +43,44 @@ const data = [
 ];
 
 export default function Dashboard() {
+  const [indexToOng, setOngToShow] = useState(0);
+
+  function handleShowNextOng() {
+    if (indexToOng === data.length - 1) {
+      setOngToShow(0);
+      return;
+    }
+
+    setOngToShow(indexToOng + 1);
+  }
+  function handleShowPreviousOng() {
+    if (indexToOng === 0) {
+      setOngToShow(data.length - 1);
+      return;
+    }
+
+    setOngToShow(indexToOng - 1);
+  }
+
   return (
-    <div>
+    <>
       <Main>
-        <h1>Titulo Legal</h1>
-        <SlideContainer>
-          <Slider data={data} width="1056px" height="576px" />
-        </SlideContainer>
+        <OngsHeader>
+          <h1> Ong&apos;s Criadas</h1>
+          <div>
+            <button type="button" onClick={handleShowPreviousOng}><FiChevronLeft /></button>
+            <button type="button" onClick={handleShowNextOng}><FiChevronRight /></button>
+          </div>
+        </OngsHeader>
+        <OngBillBoard
+          name={data[indexToOng].name}
+          bio={data[indexToOng].bio}
+          width="100%"
+          height="576px"
+          url={data[indexToOng].url}
+          image={data[indexToOng].image}
+        />
       </Main>
-    </div>
+    </>
   );
 }

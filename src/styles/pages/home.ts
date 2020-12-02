@@ -94,17 +94,47 @@ export const Header = styled.div<HeaderProps>`
 `;
 
 // Dashboard
+
 export const Main = styled.div`
-   width: 100%;
-   height: 100rem;
+   width: 85%;
+   height: auto;
    display: flex;
-   justify-content: start;
+   justify-content: center;
    align-items: center;
    flex-direction: column;
+`;
+
+export const OngsHeader = styled.div`
+   margin: 8rem 0 3rem 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
 
    h1 {
-      margin-top: 5rem;
-      font: 500 4rem Poppins;
+      font: 500 2.5rem Poppins;
+   }
+
+   div > button {
+      background: var(--color-primary);
+      width: 3rem;
+      height: 3rem;
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; */
+      color: var(--color-text-in-primary);
+      font-size: 2.5rem;
+      border-radius: 50%;
+
+      &:hover {
+         cursor: pointer;
+      }
+
+      & + button {
+         margin-left: 4rem;
+      }
    }
 
 `;

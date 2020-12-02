@@ -27,6 +27,7 @@
         "react-hooks"
     ],
     "rules": {
+      "jsx-a11y/control-has-associated-label": "off",
       "react/prop-types": "off",
       "no-nested-ternary": "off",
       "no-unused-vars": "off",
