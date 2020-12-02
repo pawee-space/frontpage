@@ -79,6 +79,7 @@ export default function Dashboard() {
           height="576px"
           url={data[indexToOng].url}
           image={data[indexToOng].image}
+          index={indexToOng}
         />
       </Main>
     </>

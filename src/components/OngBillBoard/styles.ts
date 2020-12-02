@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 interface ContainerProps {
   width: string
   height: string
+}
+interface FadeProps {
   bg: string
 }
 
@@ -15,15 +18,6 @@ export const Container = styled.div<ContainerProps>`
   display: inline-block;
   position: relative;
   border-radius: 1.5rem;
-
-  #background {
-   width: 100%;
-   height: 100%;
-   background: url(${(props) => props.bg}) no-repeat center;
-   background-size: cover;
-   border-radius: 1.5rem;
-   position: absolute;
-  }
 
   #card {
     position: absolute;
@@ -72,12 +66,22 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
+export const Fade = styled(animated.div)<FadeProps>`
+   width: 100%;
+   height: 100%;
+   background: url(${(props) => props.bg}) no-repeat center;
+   background-size: cover;
+   border-radius: 1.5rem;
+   position: absolute;
+`;
+
 export const IconLeft = styled.img`
   position: relative;
   left: 0;
   bottom: 0;
   margin: 0 0 30rem 6rem;
 `;
+
 export const IconRight = styled.img`
   position: relative;
   right: 0;

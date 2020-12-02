@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container } from './styles';
+import { useTransition } from 'react-spring';
+import { Container, Fade } from './styles';
 
 interface CarouselProps {
   width: string
@@ -8,6 +9,7 @@ interface CarouselProps {
   url: string
   name: string
   bio: string
+  index: number
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -17,15 +19,26 @@ const Carousel: React.FC<CarouselProps> = ({
   url,
   name,
   bio,
-}) => (
-  <Container width={width} height={height} bg={image}>
-    <div id="card">
-      <h1>{name}</h1>
-      <p>{bio}</p>
-      <a href={url}>Ver Perfil</a>
-    </div>
-    <div id="background" />
-  </Container>
-);
+  index,
+}) => {
+  const transitions = useTransition([index], (item: number) => item, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  return (
+    <Container width={width} height={height}>
+      <div id="card">
+        <h1>{name}</h1>
+        <p>{bio}</p>
+        <a href={url}>Ver Perfil</a>
+      </div>
+      {transitions.map(({ item, key, props }) => (
+        <Fade key={key} bg={image} style={props} />
+      ))}
+    </Container>
+  );
+};
 
 export default Carousel;
