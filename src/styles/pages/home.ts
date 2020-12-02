@@ -118,7 +118,7 @@ export const SlideContainer = styled.div`
 // Board
 
 export const BoardContainer = styled.div`
-   width: 85%;
+   width: 95%;
    height: auto;
    margin-top: 6rem;
    display: flex;
@@ -190,10 +190,18 @@ export const SearchInput = styled.div`
 `;
 
 export const Posts = styled.div`
+   display: grid;
+   grid-template-columns: 1fr 1fr;
    margin: 5rem 0;
    width: 100%;
    height: 150rem;
-   overflow-Y: scroll;
+   overflow-Y: auto;
+   overflow-X: hidden;
+
+   @media(max-width: 1130px){
+      grid-template-columns: 1fr;
+      padding: 0 10rem;
+   }
 `;
 // About
 

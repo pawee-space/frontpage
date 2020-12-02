@@ -8,9 +8,11 @@ interface ContainerProps{
 export const Container = styled.div<ContainerProps>`
    display: flex;
    background: #FFF;
-   width: 60rem;
+   width: auto;
    height: 23rem;
    border-radius: 1rem;
+   justify-content: space-between;
+   padding-right: 2rem;
    margin: 4rem 2rem;
    box-shadow: 0 0 1rem 1rem var(--color-dark-shadow);
    font: 500 1rem Poppins;
