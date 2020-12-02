@@ -96,7 +96,7 @@ export const Header = styled.div<HeaderProps>`
 // Dashboard
 
 export const Main = styled.div`
-   width: 85%;
+   width: 75%;
    height: auto;
    display: flex;
    justify-content: center;
