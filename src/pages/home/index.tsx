@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import jwt from 'jsonwebtoken';
 import { useState } from 'react';
+import { NextPageContext } from 'next';
+import { useRouter } from 'next/router';
 
 import logoImg from '@assets/logo.svg';
 import bellImg from '@assets/bell.svg';
@@ -14,7 +17,13 @@ import Dashboard from './_dashboard';
 import Board from './_board';
 import About from './_about';
 
+interface AuthProps {
+   isLogged: boolean;
+}
+
 export default function Home() {
+  const router = useRouter();
+
   const [pageToShow, setpageToShow] = useState('dashboard');
 
   function handleGoToPage(page: string) {
@@ -59,3 +68,23 @@ export default function Home() {
     </div>
   );
 }
+
+// Home.getInitialProps = async (ctx: NextPageContext) => {
+//   const isLogged = true;
+
+//     const token = localStorage.getItem(
+//       '@PaweeSpace:token',
+//     );
+
+//     console.log(token);
+
+//     jwt.verify(token, process.env.SECRET, (err, decoded) => {
+//       console.log(decoded); // bar
+//     });
+
+//   return {
+//     props: {
+//       isLogged,
+//     },
+//   };
+// };
