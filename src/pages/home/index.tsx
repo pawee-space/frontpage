@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import jwt from 'jsonwebtoken';
 import { useState } from 'react';
-import { NextPageContext } from 'next';
 import { useRouter } from 'next/router';
+import { FiChevronDown, FiBell } from 'react-icons/fi';
 
 import logoImg from '@assets/logo.svg';
 import bellImg from '@assets/bell.svg';
@@ -16,6 +15,7 @@ import {
 import Dashboard from './_dashboard';
 import Board from './_board';
 import About from './_about';
+import Profile from './_profile';
 
 interface AuthProps {
    isLogged: boolean;
@@ -26,8 +26,22 @@ export default function Home() {
 
   const [pageToShow, setpageToShow] = useState('dashboard');
 
-  function handleGoToPage(page: string) {
+  function handleGoToPage(page) {
     setpageToShow(page);
+  }
+
+  let pageToRender;
+
+  if (pageToShow === 'dashboard') {
+    pageToRender = <Dashboard />;
+  } else if (pageToShow === 'board') {
+    pageToRender = <Board />;
+  } else if (pageToShow === 'about') {
+    pageToRender = <About />;
+  } else if (pageToShow === 'profile') {
+    pageToRender = <Profile />;
+  } else {
+    pageToRender = <div />;
   }
 
   const user = {
@@ -56,13 +70,13 @@ export default function Home() {
           </div>
 
           <div>
-            <img src={bellImg} alt="Notificações" />
+            <FiBell />
             <img src={avatarImg} alt={user.name} />
-            <img src={downArrowImg} alt="Opções" />
+            <FiChevronDown onClick={() => { handleGoToPage('profile'); }} />
           </div>
         </Header>
 
-        { pageToShow === 'dashboard' ? <Dashboard /> : (pageToShow === 'board' ? <Board /> : <About />)}
+        { pageToRender }
 
       </Container>
     </div>
