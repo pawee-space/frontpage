@@ -6,8 +6,8 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement>{
    isPrimary: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ isPrimary, children }) => (
-  <Container isPrimary={isPrimary}>
+const Button: React.FC<ButtonProps> = ({ isPrimary, children, ...rest }) => (
+  <Container isPrimary={isPrimary} {...rest}>
     {children}
   </Container>
 );
