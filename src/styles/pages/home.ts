@@ -4,6 +4,10 @@ interface HeaderProps {
    windowActive: string;
 }
 
+interface PostProps {
+   background: string;
+}
+
 export const Container = styled.div`
    height: 100vh;
    min-height: 90rem;
@@ -102,9 +106,10 @@ export const Main = styled.div`
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   padding-bottom: 6rem;
 `;
 
-export const OngsHeader = styled.div`
+export const SlideHeader = styled.div`
    margin: 8rem 0 3rem 0;
    width: 100%;
    display: flex;
@@ -139,10 +144,48 @@ export const OngsHeader = styled.div`
 
 `;
 
-export const SlideContainer = styled.div`
-   position: relative;
+export const PostContainer = styled.div`
+   padding-top: 4rem;
    width: 100%;
-   height: 65rem;
+   display: flex;
+   justify-content: space-evenly;
+`;
+
+export const PostCard = styled.div<PostProps>`
+   width: 35rem;
+   height: auto;
+   background: var(--color-text-in-primary);
+   border-radius: 1rem;
+   box-shadow: 0 0 1rem 0.5rem var(--color-dark-shadow);
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+   padding-bottom: 1.2rem;
+
+   h2 {
+      font: 500 2.4rem Poppins;
+      width: 100%;
+      padding: 2.5rem 0 0 2rem;
+   }
+
+   p {
+      font: 400 1.6rem Roboto;
+      width: 100%;
+      padding: 0 2rem;
+   }
+
+   a {
+      margin-top: 2rem;
+   }
+
+   .background {
+      background: url(${(props) => props.background}) no-repeat;
+      background-size: cover;
+      border-radius: 1rem 1rem 0 0;
+      width: 100%;
+      height: 25rem;
+   }
 `;
 
 // Board
@@ -165,6 +208,7 @@ export const InputsContainer = styled.div`
    display: flex;
    flex-direction: row;
 `;
+
 export const Filter = styled.div`
    background: var(--color-background-boxes);
    width: auto;

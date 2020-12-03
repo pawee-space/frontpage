@@ -1,11 +1,12 @@
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import {
-  Main, SlideContainer, OngsHeader,
+  Main, PostContainer, SlideHeader, PostCard,
 } from '@styles/pages/home';
 
 import OngBillBoard from '../../components/OngBillBoard';
+import Button from '../../components/Button';
 
 const data = [
   {
@@ -42,36 +43,29 @@ const data = [
   },
 ];
 
+const mod = (n, m) => ((n % m) + m) % m;
+
 export default function Dashboard() {
   const [indexToOng, setOngToShow] = useState(0);
 
-  function handleShowNextOng() {
-    if (indexToOng === data.length - 1) {
-      setOngToShow(0);
-      return;
-    }
+  const handleShowPreviousOng = useCallback(() => {
+    setOngToShow((state) => mod(state - 1, data.length));
+  }, [setOngToShow]);
 
-    setOngToShow(indexToOng + 1);
-  }
-  function handleShowPreviousOng() {
-    if (indexToOng === 0) {
-      setOngToShow(data.length - 1);
-      return;
-    }
-
-    setOngToShow(indexToOng - 1);
-  }
+  const handleShowNextOng = useCallback(() => {
+    setOngToShow((state) => mod(state + 1, data.length));
+  }, [setOngToShow]);
 
   return (
     <>
       <Main>
-        <OngsHeader>
+        <SlideHeader>
           <h1> Ong&apos;s Criadas</h1>
           <div>
             <button type="button" onClick={handleShowPreviousOng}><FiChevronLeft /></button>
             <button type="button" onClick={handleShowNextOng}><FiChevronRight /></button>
           </div>
-        </OngsHeader>
+        </SlideHeader>
         <OngBillBoard
           name={data[indexToOng].name}
           bio={data[indexToOng].bio}
@@ -81,6 +75,27 @@ export default function Dashboard() {
           image={data[indexToOng].image}
           index={indexToOng}
         />
+        <SlideHeader>
+          <h1> Postagens Recentes</h1>
+          <div>
+            <button type="button" onClick={handleShowPreviousOng}><FiChevronLeft /></button>
+            <button type="button" onClick={handleShowNextOng}><FiChevronRight /></button>
+          </div>
+        </SlideHeader>
+        <PostContainer>
+          <PostCard background="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+            <div className="background" />
+            <h2>Tobi foi adotado</h2>
+            <p>O gato mais carinhoso da Ong Nome Fictício foi adotado por uma famlia carinhosa. Saiba mais sobre o pefil da Ong e conheça mais gatos carinhosos como o Tobi. </p>
+            <Button isPrimary>Saiba mais</Button>
+          </PostCard>
+          <PostCard background="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80">
+            <div className="background" />
+            <h2>Gato encontrado </h2>
+            <p>O gato encontrado na Avenida Fictícia está sendo cuidado pela Ong Nome Fictício, apesar de assustado, Mark está se recuperando muito bem, logo estará disponível para uma família gentil. Saiba mais sobre o Mark.</p>
+            <Button isPrimary>Saiba mais</Button>
+          </PostCard>
+        </PostContainer>
       </Main>
     </>
   );
