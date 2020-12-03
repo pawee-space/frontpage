@@ -34,6 +34,8 @@ import {
   BackToTopContainer,
 } from '@styles/pages/welcome';
 
+import Button from '../components/Button';
+
 import buldogAnimation from '../assets/lottie/french-buldog.json';
 
 const defaultOptions = {
@@ -82,10 +84,10 @@ const Home = () => {
       <HomeContainer id="top">
         <Header>
           <img src={logoImg} alt="Pawee" />
-          <ButtonsContainer>
-            <a href="login">Entrar</a>
-            <a href="signup">Cadastrar-se</a>
-          </ButtonsContainer>
+          <div>
+            <Button isPrimary href="login">Entrar</Button>
+            <Button isPrimary={false} href="signup">Cadastrar-se</Button>
+          </div>
         </Header>
 
         <HeaderMobile>
@@ -102,9 +104,9 @@ const Home = () => {
               {' '}
               Ong’s e abrigos de animais, faça parte!
             </p>
-            <a href="signup">
-              <button type="button">Fazer Parte</button>
-            </a>
+            <Button isPrimary href="signup">
+              Fazer Parte
+            </Button>
           </div>
         </Main>
         <ImageContainer>
@@ -146,7 +148,7 @@ const Home = () => {
         <FeatureSection>
           <h1>São dezenas de recursos e ferramentas.</h1>
           <p>Para aproveitar ainda mais, faça parte dessa rede.</p>
-          <button type="button">Fazer Parte</button>
+          <Button isPrimary href="/login">Fazer Parte</Button>
 
           <div>
             <div>

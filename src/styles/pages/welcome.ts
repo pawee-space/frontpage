@@ -30,6 +30,12 @@ export const Header = styled.div`
    align-items: center;
    margin: 5rem 4.5rem 0 4.5rem;
 
+   div {
+      a + a {
+         margin-left: 1rem;
+      }
+   }
+
    @media(max-width: 850px) {
       display: none;
    }
@@ -45,33 +51,6 @@ export const HeaderMobile = styled.div`
    }
    @media(min-width: 850px) {
       display: none;
-   }
-`;
-
-export const ButtonsContainer = styled.div`
-   a {
-      background: var(--color-primary);
-      width: 13rem;
-      height: 4.5rem;
-      color: var(--color-text-in-primary);
-      border-radius: 0.5rem;
-      border: 0.2rem var(--color-primary) solid;
-      transition: background-color 0.2s linear;
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-
-      &:hover{
-         cursor: pointer;
-         background: var(--color-primary-dark);
-         color: var(--color-text-in-primary);
-      }
-
-      & + a {
-         margin-left: 1rem;
-         background: none;
-         color: var(--color-primary);
-      }
-
    }
 `;
 
@@ -91,24 +70,9 @@ export const Main = styled.div`
       }
 
       p {
-         margin-top: 2rem;
+         margin: 2rem 0;
          font: 300 2.8rem Roboto;
          color: var(--color-text-complement)
-      }
-
-      button {
-         margin-top: 2rem;
-         background: var(--color-primary);
-         width: 13rem;
-         height: 4.5rem;
-         color: var(--color-text-in-primary);
-         border-radius: 0.5rem;
-         transition: background-color 0.2s linear;
-
-         &:hover{
-            cursor: pointer;
-            background: var(--color-primary-dark);
-         }
       }
    }
    @media(max-width: 850px) {
@@ -263,19 +227,8 @@ export const FeatureSection = styled.div`
       color: var(--color-text-complement);
    }
 
-   button {
+   a {
       margin-top: 5rem;
-      background: var(--color-primary);
-      color: var(--color-text-in-primary);
-      width: 13rem;
-      height: 4.5rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.2s linear;
-
-      &:hover{
-         cursor: pointer;
-         background: var(--color-primary-dark);
-      }
    }
 
    div {
@@ -345,7 +298,7 @@ export const FeatureSection = styled.div`
          max-width: none;
       }
 
-      button {
+      a {
          display: none;
       }
 
@@ -376,6 +329,7 @@ export const BackToTopContainer = styled.div`
    width: auto;
    height: auto;
 `;
+
 export const BackToTop = styled(Link)`
    position: -webkit-sticky;
    position: sticky;
