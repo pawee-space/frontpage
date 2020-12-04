@@ -22,7 +22,6 @@ import {
   HomeContainer,
   Header,
   HeaderMobile,
-  ButtonsContainer,
   Main,
   ImageContainer,
   DataSection,
