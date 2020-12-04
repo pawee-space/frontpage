@@ -34,10 +34,19 @@ export const Content = styled.div`
          width: 90%;
       }
 
+      .bottom {
+         margin-top: 1rem;
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+      }
+
       div {
          margin-top: 1rem;
          display: flex;
          align-items: center;
+         flex-direction: row;
          justify-content: flex-start;
          width: 90%;
 
@@ -53,7 +62,7 @@ export const Content = styled.div`
             color: var(--color-primary);
          }
 
-         input {
+         .checkbox {
             -webkit-appearance: none;
             border-radius: 1rem;
             border: 0.1rem var(--color-background-darker) solid;
@@ -86,15 +95,6 @@ export const Content = styled.div`
                background: var(--color-primary-dark);
             }
          }
-
-         & + div {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-         }
-
       }
    }
 

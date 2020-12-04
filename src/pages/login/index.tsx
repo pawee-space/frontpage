@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -18,6 +19,12 @@ interface SignInFormData {
 
 export default function Dashboard() {
   const router = useRouter();
+
+  const [passwordIsShown, setpasswordIsShown] = useState(false);
+
+  const handleShowPassword = () => {
+    setpasswordIsShown(!passwordIsShown);
+  };
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
@@ -65,15 +72,21 @@ export default function Dashboard() {
             <Input name="email" placeholder="dino@pawee.space" />
 
             <span>Senha</span>
-            <Input name="password" placeholder="*******" />
+            <Input
+              name="password"
+              type={passwordIsShown ? 'text' : 'password'}
+              icon={passwordIsShown ? FiEye : FiEyeOff}
+              placeholder="*******"
+              iconAction={handleShowPassword}
+            />
 
             <div>
-              <input type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
+              <input className="checkbox" type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
               <p>Manter conectado</p>
               <a href="forgot">Esqueceu sua senha?</a>
             </div>
 
-            <div>
+            <div className="bottom">
               <button type="submit">Entrar</button>
               <a href="signup">Cadastrar-se</a>
             </div>
