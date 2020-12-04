@@ -302,7 +302,7 @@ export const ProfileContainer = styled.div`
    margin-top: 7rem;
    background: var(--color-background-darker);
    width: 80%;
-   height: 100%;
+   height: auto;
    border-radius: 1rem 1rem 0 0;
 `;
 
@@ -344,5 +344,6 @@ export const ProfilePostsContainer = styled.div`
 
    h2 {
       font: 500 3rem Poppins;
+      margin-bottom: 2rem;
    }
 `;
