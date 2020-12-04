@@ -76,7 +76,7 @@ export default function Dashboard() {
               name="password"
               type={passwordIsShown ? 'text' : 'password'}
               icon={passwordIsShown ? FiEye : FiEyeOff}
-              placeholder="*******"
+              placeholder={passwordIsShown ? '*******' : 'senha'}
               iconAction={handleShowPassword}
             />
 
