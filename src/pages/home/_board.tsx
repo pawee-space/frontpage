@@ -32,7 +32,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -43,7 +43,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -54,7 +54,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -65,7 +65,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -76,7 +76,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -87,7 +87,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -98,7 +98,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -109,7 +109,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
         <PostPreview
           title="Titulo da postagem"
@@ -120,7 +120,7 @@ export default function Board() {
           ongImage="https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
           ongAddress="Salvador, Ba"
           postedAt="semana passada"
-          tags={['cachorros', 'sua mae']}
+          tags={['cachorros', 'cleiton']}
         />
       </Posts>
 
