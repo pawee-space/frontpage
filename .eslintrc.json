@@ -27,6 +27,7 @@
         "react-hooks"
     ],
     "rules": {
+      "@typescript-eslint/ban-types": "off",
       "jsx-a11y/control-has-associated-label": "off",
       "react/prop-types": "off",
       "no-nested-ternary": "off",
