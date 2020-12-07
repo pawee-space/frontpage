@@ -33,16 +33,14 @@ export default function Dashboard() {
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
-          .required('Email required')
-          .email('Insert a valid email'),
-        password: Yup.string().required('Password required'),
+          .required('Insira um email ou usuário'),
+        password: Yup.string().required('Insira uma senha'),
       });
 
       await schema.validate(data, {
         abortEarly: false,
       });
 
-      // sign in
       await signIn(data);
 
       router.push('/home');
@@ -52,7 +50,7 @@ export default function Dashboard() {
 
         addToast({
           type: 'error',
-          title: 'Whoopsie',
+          title: 'Oops',
           description: error.message,
         });
 
@@ -65,7 +63,7 @@ export default function Dashboard() {
         description: 'Não foi possível fazer o login. Escreveu direitin?',
       });
     }
-  }, []);
+  }, [addToast, router]);
 
   return (
     <div>
