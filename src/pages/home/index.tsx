@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { FiChevronDown, FiBell } from 'react-icons/fi';
+import { FiChevronDown, FiBell, FiDivide } from 'react-icons/fi';
 
 import logoImg from '@assets/logo.svg';
 import bellImg from '@assets/bell.svg';
@@ -16,6 +16,7 @@ import Dashboard from './_dashboard';
 import Board from './_board';
 import About from './_about';
 import Profile from './_profile';
+import NotAuthenticated from '../_notAuthenticated';
 
 interface AuthProps {
    isLogged: boolean;
@@ -23,6 +24,18 @@ interface AuthProps {
 
 export default function Home() {
   const router = useRouter();
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [redirectTimer, setRedirectTimer] = useState(10);
+
+  useEffect(() => {
+    const token = localStorage.getItem('@PaweeSpace:token');
+    console.log(token);
+    if (token) {
+      setIsAuthorized(true);
+    } else {
+      setIsAuthorized(false);
+    }
+  }, []);
 
   const [pageToShow, setpageToShow] = useState('dashboard');
 
@@ -54,31 +67,35 @@ export default function Home() {
       <Head>
         <title>Pawee Space - Dashboard</title>
       </Head>
-      <Container>
-        <Header windowActive={pageToShow}>
-          <img src={logoImg} alt="Pawee" />
-          <div>
-            <div>
-              <button type="button" onClick={() => handleGoToPage('dashboard')} className="dashboard">Início</button>
-            </div>
-            <div>
-              <button type="button" onClick={() => handleGoToPage('board')} className="board">Mural</button>
-            </div>
-            <div>
-              <button type="button" onClick={() => handleGoToPage('about')} className="about">Sobre</button>
-            </div>
-          </div>
+      {isAuthorized
+        ? (
+          <Container>
+            <Header windowActive={pageToShow}>
+              <img src={logoImg} alt="Pawee" />
+              <div>
+                <div>
+                  <button type="button" onClick={() => handleGoToPage('dashboard')} className="dashboard">Início</button>
+                </div>
+                <div>
+                  <button type="button" onClick={() => handleGoToPage('board')} className="board">Mural</button>
+                </div>
+                <div>
+                  <button type="button" onClick={() => handleGoToPage('about')} className="about">Sobre</button>
+                </div>
+              </div>
 
-          <div>
-            <FiBell />
-            <img src={avatarImg} alt={user.name} />
-            <FiChevronDown onClick={() => { handleGoToPage('profile'); }} />
-          </div>
-        </Header>
+              <div>
+                <FiBell />
+                <img src={avatarImg} alt={user.name} />
+                <FiChevronDown onClick={() => { handleGoToPage('profile'); }} />
+              </div>
+            </Header>
 
-        { pageToRender }
+            { pageToRender }
 
-      </Container>
+          </Container>
+        )
+        : <NotAuthenticated />}
     </div>
   );
 }
