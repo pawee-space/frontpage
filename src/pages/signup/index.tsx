@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { Form } from '@unform/web';
 
 import wellcomeImg from '@assets/welcome.svg';
@@ -9,7 +10,12 @@ import { Container, Content, Aside } from '@styles/pages/signup';
 import Input from '@components/input';
 
 export default function Dashboard() {
+  const [passwordIsShown, setPasswordIsShown] = useState(false);
   const handleSubmit = useCallback(() => {}, []);
+
+  const handleShowPassword = () => {
+    setPasswordIsShown(!passwordIsShown);
+  };
 
   return (
     <div>
@@ -44,10 +50,22 @@ export default function Dashboard() {
             <Input name="email" placeholder="dino@pawee.space" />
 
             <span>Senha</span>
-            <Input name="password" placeholder="*******" />
+            <Input
+              name="password"
+              type={passwordIsShown ? 'text' : 'password'}
+              icon={passwordIsShown ? FiEye : FiEyeOff}
+              placeholder={!passwordIsShown ? '*******' : 'senha'}
+              iconAction={handleShowPassword}
+            />
 
             <span>Repita Senha</span>
-            <Input name="passwordConfirm" placeholder="*******" />
+            <Input
+              name="passwordConfirm"
+              type={passwordIsShown ? 'text' : 'password'}
+              icon={passwordIsShown ? FiEye : FiEyeOff}
+              placeholder={!passwordIsShown ? '*******' : 'senha'}
+              iconAction={handleShowPassword}
+            />
 
             <div>
               <p>Já possui uma conta?</p>

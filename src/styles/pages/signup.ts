@@ -70,24 +70,6 @@ export const Content = styled.div`
             color: var(--color-primary);
          }
 
-         input {
-            -webkit-appearance: none;
-            border-radius: 1rem;
-            border: 0.1rem var(--color-background-darker) solid;
-            padding: 9px;
-            border-radius: 3px;
-            display: inline-block;
-            position: relative;
-
-            &:checked {
-               background-color: var(--color-primary);
-            }
-
-            &:focus {
-               border: 0.1rem var(--color-primary) solid;
-            }
-         }
-
          & + div {
             margin-top: 1rem;
             display: flex;
