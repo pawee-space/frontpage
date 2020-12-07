@@ -32,7 +32,7 @@ const ToastTeste: React.FC = () => {
   const handleCreateToast = useCallback(() => {
     addToast({
       type: 'error',
-      title: 'Problemoo!',
+      title: 'Problemo!',
       description: 'That password and login doesn`t match. Try again?',
     });
   }, [addToast]);

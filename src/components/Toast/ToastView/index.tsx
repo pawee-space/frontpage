@@ -6,7 +6,7 @@ import {
   FiXCircle,
 } from 'react-icons/fi';
 
-import { ToastMessage } from '../../../hooks/toast';
+import { ToastMessage, useToast } from '../../../hooks/toast';
 
 import { Container } from './styles';
 
@@ -22,15 +22,16 @@ const icons = {
 };
 
 const ToastView: React.FC<ToastViewProps> = ({ message, style }) => {
+  const { removeToast } = useToast();
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('removeToast(message.id)');
+      removeToast(message.id);
     }, 5000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [message.id, removeToast]);
 
   return (
     <Container
@@ -46,7 +47,7 @@ const ToastView: React.FC<ToastViewProps> = ({ message, style }) => {
       </div>
 
       <button
-        onClick={() => console.log('removeToast(message.id)')}
+        onClick={() => removeToast(message.id)}
         type="button"
       >
         <FiXCircle size={18} />
