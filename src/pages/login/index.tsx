@@ -43,14 +43,12 @@ export default function Dashboard() {
       });
 
       // sign in
-      signIn(data);
+      await signIn(data);
 
       router.push('/home');
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const errors = getValidationErrors(error);
-
-        console.log(errors);
 
         addToast({
           type: 'error',
@@ -64,7 +62,7 @@ export default function Dashboard() {
       addToast({
         type: 'error',
         title: 'Problemo!',
-        description: 'That password and login doesn`t match. Try again?',
+        description: 'Não foi possível fazer o login. Escreveu direitin?',
       });
     }
   }, []);
