@@ -10,6 +10,8 @@ import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/login';
 import Input from '@components/input';
+import getValidationErrors from '../../utils/getValidationErros';
+import { useToast } from '../../hooks/toast';
 import signIn from '../../hooks/auth';
 
 interface SignInFormData {
@@ -18,6 +20,7 @@ interface SignInFormData {
 }
 
 export default function Dashboard() {
+  const { addToast } = useToast();
   const router = useRouter();
 
   const [passwordIsShown, setpasswordIsShown] = useState(false);
@@ -45,10 +48,24 @@ export default function Dashboard() {
       router.push('/home');
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
-        // const errors = getValidationErrors(error);
+        const errors = getValidationErrors(error);
 
-        console.log(error);
+        console.log(errors);
+
+        addToast({
+          type: 'error',
+          title: 'Whoopsie',
+          description: error.message,
+        });
+
+        return;
       }
+
+      addToast({
+        type: 'error',
+        title: 'Problemo!',
+        description: 'That password and login doesn`t match. Try again?',
+      });
     }
   }, []);
 
