@@ -10,6 +10,7 @@ import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/login';
 import Input from '@components/input';
+import Submit from '@components/Submit';
 import getValidationErrors from '../../utils/getValidationErros';
 import { useToast } from '../../hooks/toast';
 import signIn from '../../hooks/auth';
@@ -23,10 +24,11 @@ export default function Dashboard() {
   const { addToast } = useToast();
   const router = useRouter();
 
-  const [passwordIsShown, setpasswordIsShown] = useState(false);
+  const [passwordIsShown, setPasswordIsShown] = useState(false);
+  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(true);
 
   const handleShowPassword = () => {
-    setpasswordIsShown(!passwordIsShown);
+    setPasswordIsShown(!passwordIsShown);
   };
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
@@ -100,7 +102,7 @@ export default function Dashboard() {
             </div>
 
             <div className="bottom">
-              <button type="submit">Entrar</button>
+              <Submit isDisabled={signInButtonIsDisabled}>Entrar</Submit>
               <a href="signup">Cadastrar-se</a>
             </div>
           </Form>
