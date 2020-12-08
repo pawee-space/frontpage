@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Container } from '../styles/pages/notAuthenticated';
-import sadFaceImg from '../assets/sad_face.svg';
+import { Container } from '@styles/pages/notAuthenticated';
+import sadFaceImg from '@assets/sad_face.svg';
 
 const NotAuthenticated = () => {
   const [timeToRedirect, setTimeToRedirect] = useState(5);

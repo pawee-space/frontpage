@@ -3,7 +3,6 @@ import { Link } from 'react-scroll';
 import Lottie from 'react-lottie';
 import { useState } from 'react';
 import { FiChevronUp } from 'react-icons/fi';
-
 import logoImg from '@assets/logo.svg';
 import logoAlphaImg from '@assets/logo-alpha.svg';
 import dinoImg from '@assets/dino-entire.svg';

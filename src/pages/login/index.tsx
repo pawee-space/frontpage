@@ -1,13 +1,11 @@
 import Head from 'next/head';
+import * as Yup from 'yup';
 import { useCallback, useState, useEffect } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 import { Form } from '@unform/web';
-import * as Yup from 'yup';
-
 import welcomeImg from '@assets/welcome.svg';
 import dinoImg from '@assets/dino.svg';
-
 import { Container, Content, Aside } from '@styles/pages/login';
 import Input from '@components/input';
 import Submit from '@components/Submit';
@@ -35,7 +33,7 @@ export default function Dashboard() {
     } else {
       setIsAuthorized(false);
     }
-  }, []);
+  }, [router]);
 
   const handleShowPassword = () => {
     setPasswordIsShown(!passwordIsShown);

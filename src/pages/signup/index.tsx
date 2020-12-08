@@ -4,16 +4,14 @@ import { useCallback, useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
-
 import welcomeImg from '@assets/welcome.svg';
 import dinoImg from '@assets/dino.svg';
-
 import { Container, Content, Aside } from '@styles/pages/signup';
 import Input from '@components/input';
 import Submit from '@components/Submit';
-import { signUp } from '../../hooks/auth';
-import { useToast } from '../../hooks/toast';
-import getValidationErrors from '../../utils/getValidationErros';
+import { signUp } from '@hooks/auth';
+import { useToast } from '@hooks/toast';
+import getValidationErrors from '@utils/getValidationErros';
 
 interface SignUpFormData {
    name: string;

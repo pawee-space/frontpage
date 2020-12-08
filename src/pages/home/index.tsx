@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { FiChevronDown, FiBell, FiDivide } from 'react-icons/fi';
+import { FiChevronDown, FiBell } from 'react-icons/fi';
 
 import logoImg from '@assets/logo.svg';
-import bellImg from '@assets/bell.svg';
 import avatarImg from '@assets/avatar-mockup.svg';
-import downArrowImg from '@assets/down-arrow.svg';
 
 import {
   Container, Header,
@@ -18,14 +15,8 @@ import About from './_about';
 import Profile from './_profile';
 import NotAuthenticated from '../_notAuthenticated';
 
-interface AuthProps {
-   isLogged: boolean;
-}
-
 export default function Home() {
-  const router = useRouter();
   const [isAuthorized, setIsAuthorized] = useState(false);
-  const [redirectTimer, setRedirectTimer] = useState(10);
 
   useEffect(() => {
     const token = localStorage.getItem('@PaweeSpace:token');
@@ -36,10 +27,10 @@ export default function Home() {
     }
   }, []);
 
-  const [pageToShow, setpageToShow] = useState('dashboard');
+  const [pageToShow, setPageToShow] = useState('dashboard');
 
   function handleGoToPage(page) {
-    setpageToShow(page);
+    setPageToShow(page);
   }
 
   let pageToRender;

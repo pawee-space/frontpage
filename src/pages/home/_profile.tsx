@@ -1,6 +1,5 @@
-import { ProfileContainer, HeaderContent, ProfilePostsContainer } from '../../styles/pages/home';
-
-import Post from '../../components/Post';
+import Post from '@components/Post';
+import { ProfileContainer, HeaderContent, ProfilePostsContainer } from '@styles/pages/home';
 
 const Profile = () => (
   <ProfileContainer>

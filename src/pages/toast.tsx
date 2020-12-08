@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import { useToast } from '../hooks/toast';
+import { useToast } from '@hooks/toast';
 
 const Container = styled.div`
    width: 100%;
