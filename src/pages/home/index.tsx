@@ -29,7 +29,6 @@ export default function Home() {
 
   useEffect(() => {
     const token = localStorage.getItem('@PaweeSpace:token');
-    console.log(token);
     if (token) {
       setIsAuthorized(true);
     } else {

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 import { Form } from '@unform/web';
@@ -21,11 +21,21 @@ interface SignInFormData {
 }
 
 export default function Dashboard() {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [passwordIsShown, setPasswordIsShown] = useState(false);
+  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(false);
   const { addToast } = useToast();
   const router = useRouter();
 
-  const [passwordIsShown, setPasswordIsShown] = useState(false);
-  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem('@PaweeSpace:token');
+    if (token) {
+      setIsAuthorized(true);
+      router.push('/home');
+    } else {
+      setIsAuthorized(false);
+    }
+  }, []);
 
   const handleShowPassword = () => {
     setPasswordIsShown(!passwordIsShown);
@@ -77,40 +87,46 @@ export default function Dashboard() {
         <title>Pawee Space - Login</title>
       </Head>
       <Container>
-        <Aside>
-          <a href="/"><img src={wellcomeImg} alt="Pawee Bem-vindo" /></a>
-          <div>
-            <img src={dinoImg} alt="Dino" />
-            <p>O dino é o protetor dos animais da pawee.</p>
-          </div>
-        </Aside>
-        <Content>
-          <Form onSubmit={handleSubmit}>
-            <h1>Entrar</h1>
-            <span>Email ou usuário</span>
-            <Input name="email" placeholder="dino@pawee.space" />
+        {!isAuthorized
+          ? (
+            <>
+              <Aside>
+                <a href="/"><img src={wellcomeImg} alt="Pawee Bem-vindo" /></a>
+                <div>
+                  <img src={dinoImg} alt="Dino" />
+                  <p>O dino é o protetor dos animais da pawee.</p>
+                </div>
+              </Aside>
+              <Content>
+                <Form onSubmit={handleSubmit}>
+                  <h1>Entrar</h1>
+                  <span>Email ou usuário</span>
+                  <Input name="email" placeholder="dino@pawee.space" />
 
-            <span>Senha</span>
-            <Input
-              name="password"
-              type={passwordIsShown ? 'text' : 'password'}
-              icon={passwordIsShown ? FiEye : FiEyeOff}
-              placeholder={!passwordIsShown ? '*******' : 'senha'}
-              iconAction={handleShowPassword}
-            />
+                  <span>Senha</span>
+                  <Input
+                    name="password"
+                    type={passwordIsShown ? 'text' : 'password'}
+                    icon={passwordIsShown ? FiEye : FiEyeOff}
+                    placeholder={!passwordIsShown ? '*******' : 'senha'}
+                    iconAction={handleShowPassword}
+                  />
 
-            <div>
-              <input className="checkbox" type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
-              <p>Manter conectado</p>
-              <a href="forgot">Esqueceu sua senha?</a>
-            </div>
+                  <div>
+                    <input className="checkbox" type="checkbox" id="stayLoggedIn" name="stayLoggedIn" value="Bike" />
+                    <p>Manter conectado</p>
+                    <a href="forgot">Esqueceu sua senha?</a>
+                  </div>
 
-            <div className="bottom">
-              <Submit isDisabled={signInButtonIsDisabled}>Entrar</Submit>
-              <a href="signup">Cadastrar-se</a>
-            </div>
-          </Form>
-        </Content>
+                  <div className="bottom">
+                    <Submit isDisabled={signInButtonIsDisabled}>Entrar</Submit>
+                    <a href="signup">Cadastrar-se</a>
+                  </div>
+                </Form>
+              </Content>
+            </>
+          )
+          : <p>Redirectioning...</p>}
       </Container>
     </div>
   );
