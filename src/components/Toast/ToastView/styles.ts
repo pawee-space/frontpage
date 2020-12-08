@@ -60,4 +60,8 @@ export const Container = styled(animated.div)<ContainerProps>`
             margin-top: 0;
          }
       `}
+
+   .closeButton {
+      cursor: pointer;
+   }
 `;

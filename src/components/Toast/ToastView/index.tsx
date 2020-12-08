@@ -50,7 +50,7 @@ const ToastView: React.FC<ToastViewProps> = ({ message, style }) => {
         onClick={() => removeToast(message.id)}
         type="button"
       >
-        <FiXCircle size={18} />
+        <FiXCircle size={18} className="closeButton" />
       </button>
     </Container>
   );
