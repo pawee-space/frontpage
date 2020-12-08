@@ -31,8 +31,8 @@ export const signUp = async ({ name, email, password }) => {
     localStorage.setItem('@PaweeSpace:user', JSON.stringify(user.name));
     localStorage.setItem('@PaweeSpace:token', token);
   } catch (error) {
-    if (error.response.data.message) {
-      throw new Error(error.response.data.message);
+    if (error.response.status) {
+      throw new Error(error.response.status);
     }
   }
 };

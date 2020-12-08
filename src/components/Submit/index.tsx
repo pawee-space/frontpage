@@ -14,10 +14,13 @@ const defaultOptions = {
 
 interface ButtonProps {
    isDisabled: boolean;
+   isSecondary?: boolean;
 }
 
-const Submit: React.FC<ButtonProps> = ({ isDisabled, children, ...rest }) => (
-  <Container type="submit" {...rest} disabled={isDisabled}>
+const Submit: React.FC<ButtonProps> = ({
+  isDisabled, isSecondary = false, children, ...rest
+}) => (
+  <Container type="submit" {...rest} disabled={isDisabled} isSecondary={isSecondary}>
     {isDisabled
       ? (
         <Lottie

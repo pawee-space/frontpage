@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.button`
+interface ButtonProps {
+   isSecondary: boolean;
+}
+
+export const Container = styled.button<ButtonProps>`
    background: var(--color-primary);
    color: var(--color-text-in-primary);
    width: 13rem;
@@ -12,6 +16,15 @@ export const Container = styled.button`
       cursor: pointer;
       background: var(--color-primary-dark);
    }
+
+   ${(props) => props.isSecondary && css`
+         color: var(--color-primary);
+         border: 0.2rem var(--color-primary) solid;
+         background: none;
+         &:hover{
+            color: var(--color-text-in-primary);
+         }
+   `}
 
    &:disabled,
    &[disabled]{

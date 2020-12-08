@@ -10,6 +10,7 @@ import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/signup';
 import Input from '@components/input';
+import Submit from '@components/Submit';
 import { signUp } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErros';
@@ -24,8 +25,10 @@ interface SignUpFormData {
 export default function Dashboard() {
   const { addToast } = useToast();
   const router = useRouter();
+  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(false);
   const [passwordIsShown, setPasswordIsShown] = useState(false);
   const handleSubmit = useCallback(async (data: SignUpFormData) => {
+    setSignInButtonIsDisabled(true);
     try {
       const schema = Yup.object().shape({
         name: Yup.string()
@@ -47,10 +50,9 @@ export default function Dashboard() {
 
       router.push('/home');
     } catch (error) {
+      setSignInButtonIsDisabled(false);
       if (error instanceof Yup.ValidationError) {
         const errors = getValidationErrors(error);
-
-        console.log(errors);
 
         for (const [key, value] of Object.entries(errors)) {
           addToast({
@@ -59,6 +61,16 @@ export default function Dashboard() {
             description: value,
           });
         }
+
+        return;
+      }
+
+      if (error.message === '409') {
+        addToast({
+          type: 'error',
+          title: 'Oxente?',
+          description: 'Esse email já está em uso',
+        });
 
         return;
       }
@@ -130,7 +142,7 @@ export default function Dashboard() {
               <a href="login">Entrar</a>
             </div>
 
-            <button type="submit">Cadastrar</button>
+            <Submit isDisabled={signInButtonIsDisabled} isSecondary>Cadastrar</Submit>
           </Form>
         </Content>
       </Container>

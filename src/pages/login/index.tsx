@@ -25,13 +25,14 @@ export default function Dashboard() {
   const router = useRouter();
 
   const [passwordIsShown, setPasswordIsShown] = useState(false);
-  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(true);
+  const [signInButtonIsDisabled, setSignInButtonIsDisabled] = useState(false);
 
   const handleShowPassword = () => {
     setPasswordIsShown(!passwordIsShown);
   };
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
+    setSignInButtonIsDisabled(true);
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
@@ -47,14 +48,17 @@ export default function Dashboard() {
 
       router.push('/home');
     } catch (error) {
+      setSignInButtonIsDisabled(false);
       if (error instanceof Yup.ValidationError) {
         const errors = getValidationErrors(error);
 
-        addToast({
-          type: 'error',
-          title: 'Oops',
-          description: error.message,
-        });
+        for (const [key, value] of Object.entries(errors)) {
+          addToast({
+            type: 'error',
+            title: 'Oops',
+            description: value,
+          });
+        }
 
         return;
       }

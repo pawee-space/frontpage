@@ -36,20 +36,6 @@ export const Content = styled.div`
 
       button {
          margin: 5rem 0 1rem 0;
-         color: var(--color-text-in-primary);
-         border: 0.2rem var(--color-primary) solid;
-         width: 13rem;
-         height: 4.5rem;
-         border-radius: 0.5rem;
-         transition: background-color 0.2s linear;
-         color: var(--color-primary);
-
-         &:hover{
-            cursor: pointer;
-            background: var(--color-primary-dark);
-            color: var(--color-text-in-primary);
-         }
-
       }
 
       div {
