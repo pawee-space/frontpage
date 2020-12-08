@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import wellcomeImg from '@assets/welcome.svg';
+import welcomeImg from '@assets/welcome.svg';
 import dinoImg from '@assets/dino.svg';
 
 import { Container, Content, Aside } from '@styles/pages/login';
@@ -91,7 +91,7 @@ export default function Dashboard() {
           ? (
             <>
               <Aside>
-                <a href="/"><img src={wellcomeImg} alt="Pawee Bem-vindo" /></a>
+                <a href="/"><img src={welcomeImg} alt="Pawee Bem-vindo" /></a>
                 <div>
                   <img src={dinoImg} alt="Dino" />
                   <p>O dino é o protetor dos animais da pawee.</p>
