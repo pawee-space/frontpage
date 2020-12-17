@@ -3,13 +3,19 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-const Post: React.FC = () => (
+interface IPost {
+   user: string;
+   content: string;
+   postId: string;
+}
+
+const Post: React.FC<IPost> = ({ user, content, postId }) => (
   <Container>
     <div className="header">
       <div>
         <div className="avatar" />
         <div>
-          <span>Nome da Ong</span>
+          <span>{user}</span>
           <span>Há 2 dias</span>
         </div>
       </div>
@@ -17,8 +23,8 @@ const Post: React.FC = () => (
     </div>
     <div className="image" />
     <div className="bio">
-      <p>Pássaros são resgatados e cuidados, os silvestres foram soltos na naturez e alguns...</p>
-      <a href="/post/1293192">Ver tudo</a>
+      <p>{content}</p>
+      <a href={`/post/${postId}`}>Ver tudo</a>
     </div>
   </Container>
 );

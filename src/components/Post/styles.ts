@@ -11,6 +11,10 @@ export const Container = styled.div`
    flex-direction: column;
    padding: 3rem 0;
 
+   & + div {
+      margin-top: 2rem;
+   }
+
    .header {
       width: 90%;
       height: 10rem;
