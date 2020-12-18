@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Post from '@components/Post';
 import {
   Container, ProfileContainer, HeaderContent, ProfilePostsContainer,
 } from '@styles/pages/users';
 import { GetServerSideProps } from 'next';
 import api from '../../services/api';
+import { useToast } from '../../hooks/toast';
 
 interface IPost {
    id: string;
@@ -33,14 +32,14 @@ const Profile = ({ name, posts }: IUser) => (
       </HeaderContent>
       <ProfilePostsContainer>
         <h2>Minhas Postagens</h2>
-        {posts.map((post) => (
+        {posts ? posts.map((post) => (
           <Post
             key={post.id}
             postId={post.id}
             user={name}
             content={post.content}
           />
-        ))}
+        )).reverse() : null}
       </ProfilePostsContainer>
     </ProfileContainer>
   </Container>
@@ -52,14 +51,24 @@ export const getServerSideProps: GetServerSideProps<IUser> = async (context) => 
   const { userId } = context.query;
   const userResponse = await api.get(`/user/${userId}`);
   const { name, username } = userResponse.data;
-  const postsResponse = await api.get(`/post/all/${userId}`);
-  const posts = postsResponse.data;
+  try {
+    const postsResponse = await api.get(`/post/all/${userId}`);
+    const posts = postsResponse.data;
 
-  return {
-    props: {
-      name,
-      username,
-      posts,
-    },
-  };
+    return {
+      props: {
+        name,
+        username,
+        posts,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        name,
+        username,
+        posts: null,
+      },
+    };
+  }
 };
