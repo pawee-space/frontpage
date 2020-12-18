@@ -1,10 +1,10 @@
 import Post from '@components/Post';
+import CreatePost from '@components/CreatePost';
 import {
   Container, ProfileContainer, HeaderContent, ProfilePostsContainer,
 } from '@styles/pages/users';
 import { GetServerSideProps } from 'next';
 import api from '../../services/api';
-import { useToast } from '../../hooks/toast';
 
 interface IPost {
    id: string;
@@ -32,6 +32,7 @@ const Profile = ({ name, posts }: IUser) => (
       </HeaderContent>
       <ProfilePostsContainer>
         <h2>Minhas Postagens</h2>
+        <CreatePost />
         {posts ? posts.map((post) => (
           <Post
             key={post.id}
