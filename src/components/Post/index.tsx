@@ -21,7 +21,7 @@ const Post: React.FC<IPost> = ({ user, content, postId }) => (
       </div>
       <FiMoreHorizontal />
     </div>
-    <div className="image" />
+    {/* <div className="image" /> */}
     <div className="bio">
       <p>{content}</p>
       <a href={`/post/${postId}`}>Ver tudo</a>

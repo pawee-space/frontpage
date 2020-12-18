@@ -14,6 +14,7 @@ export const ProfileContainer = styled.div`
    width: 80%;
    height: auto;
    border-radius: 1rem 1rem 0 0;
+
 `;
 
 export const HeaderContent = styled.div`
@@ -51,9 +52,15 @@ export const ProfilePostsContainer = styled.div`
    margin-top: 13rem;
    width: 100%;
    padding: 0 10% 10rem 10%;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
 
    h2 {
       font: 500 3rem Poppins;
       margin-bottom: 2rem;
+      width: 100%;
+      max-width: 900px;
    }
 `;

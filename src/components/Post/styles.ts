@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    width: 100%;
+   max-width: 900px;
    height: auto;
    background: var(--color-text-in-primary);
    border-radius: 1rem;
@@ -21,6 +22,7 @@ export const Container = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 2rem;
 
       svg {
          font-size: 4rem;
