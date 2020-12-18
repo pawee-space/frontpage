@@ -1,22 +1,23 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { FiChevronDown, FiBell } from 'react-icons/fi';
-
+import { useRouter } from 'next/router';
 import logoImg from '@assets/logo.svg';
 import avatarImg from '@assets/avatar-mockup.svg';
-
 import {
   Container, Header,
 } from '@styles/pages/home';
-
 import Dashboard from './_dashboard';
 import Board from './_board';
 import About from './_about';
-import Profile from './_profile';
 import NotAuthenticated from '../_notAuthenticated';
 
 export default function Home() {
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const router = useRouter();
+
+  // TEMP
+  const userId = 'e0a3a2fd-da92-42f2-af2b-09c98a7750ff';
 
   useEffect(() => {
     const token = localStorage.getItem('@PaweeSpace:token');
@@ -29,8 +30,12 @@ export default function Home() {
 
   const [pageToShow, setPageToShow] = useState('dashboard');
 
-  function handleGoToPage(page) {
+  function handleChangePage(page: string) {
     setPageToShow(page);
+  }
+
+  function handleGoToPage(page: string) {
+    router.push(page);
   }
 
   let pageToRender;
@@ -41,8 +46,6 @@ export default function Home() {
     pageToRender = <Board />;
   } else if (pageToShow === 'about') {
     pageToRender = <About />;
-  } else if (pageToShow === 'profile') {
-    pageToRender = <Profile />;
   } else {
     pageToRender = <div />;
   }
@@ -64,20 +67,20 @@ export default function Home() {
               <img src={logoImg} alt="Pawee" />
               <div>
                 <div>
-                  <button type="button" onClick={() => handleGoToPage('dashboard')} className="dashboard">Início</button>
+                  <button type="button" onClick={() => handleChangePage('dashboard')} className="dashboard">Início</button>
                 </div>
                 <div>
-                  <button type="button" onClick={() => handleGoToPage('board')} className="board">Mural</button>
+                  <button type="button" onClick={() => handleChangePage('board')} className="board">Mural</button>
                 </div>
                 <div>
-                  <button type="button" onClick={() => handleGoToPage('about')} className="about">Sobre</button>
+                  <button type="button" onClick={() => handleChangePage('about')} className="about">Sobre</button>
                 </div>
               </div>
 
               <div>
                 <FiBell />
                 <img src={avatarImg} alt={user.name} />
-                <FiChevronDown onClick={() => { handleGoToPage('profile'); }} />
+                <FiChevronDown onClick={() => { handleGoToPage(`/user/${userId}`); }} />
               </div>
             </Header>
 
