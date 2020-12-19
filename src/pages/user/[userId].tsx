@@ -1,10 +1,11 @@
 import Post from '@components/Post';
 import CreatePost from '@components/CreatePost';
+import { FiCamera } from 'react-icons/fi';
 import {
   Container, ProfileContainer, HeaderContent, ProfilePostsContainer,
 } from '@styles/pages/user';
 import { GetServerSideProps } from 'next';
-import avatar from '@assets/provisory-avatar-img.png';
+import avatar from '@assets/provisory-avatar-img.svg';
 import api from '../../services/api';
 
 interface IPost {
@@ -23,7 +24,11 @@ const Profile = ({ name, posts }: IUser) => (
   <Container>
     <ProfileContainer>
       <HeaderContent>
-        <div className="background" />
+        <div className="background">
+          <div className="changeCover">
+            <FiCamera />
+          </div>
+        </div>
         <div className="info">
           <div className="avatar">
             <img src={avatar} alt={name} />

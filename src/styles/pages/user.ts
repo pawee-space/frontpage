@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const cover = 'https://images.unsplash.com/photo-1516214104703-d870798883c5';
+
 export const Container = styled.div`
    width: 100%;
    height: auto;
@@ -12,6 +14,7 @@ export const ProfileContainer = styled.div`
    background: var(--color-background-darker);
    width: 80%;
    height: auto;
+   max-width: 1200px;
 `;
 
 export const HeaderContent = styled.div`
@@ -19,9 +22,27 @@ export const HeaderContent = styled.div`
 
    .background {
       background: var(--color-background-footer);
+      background: url('https://images.unsplash.com/photo-1516214104703-d870798883c5') no-repeat center;
+      background-size: cover;
       width: 100%;
       height: 25rem;
       border-radius: 0 0 1rem 1rem;
+      position: relative;
+      cursor: pointer;
+
+      .changeCover {
+         background: rgba(187, 187, 187, 0.17);
+         width: 3rem;
+         height: 3rem;
+         border-radius: 50%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: var(--color-text-in-primary);
+         position: absolute;
+         bottom: 1.5rem;
+         right: 1.5rem;
+      }
    }
 
    .avatar {

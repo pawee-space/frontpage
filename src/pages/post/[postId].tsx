@@ -1,5 +1,6 @@
 import Post from '@components/Post';
 import { GetServerSideProps } from 'next';
+import avatar from '@assets/provisory-avatar-img.svg';
 import api from '../../services/api';
 
 interface IPost {
@@ -11,6 +12,7 @@ interface IPost {
 const Profile = ({ id, content }: IPost) => (
   <Post
     postId={id}
+    avatar={avatar}
     user="Disney"
     content={content}
   />
