@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-   position: absolute;
+   position: fixed;
    overflow: hidden;
    padding: 30px;
    right: 0;
