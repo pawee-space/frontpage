@@ -9,12 +9,9 @@ export const Container = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
-   margin-top: 7rem;
    background: var(--color-background-darker);
    width: 80%;
    height: auto;
-   border-radius: 1rem 1rem 0 0;
-
 `;
 
 export const HeaderContent = styled.div`
@@ -24,7 +21,7 @@ export const HeaderContent = styled.div`
       background: var(--color-background-footer);
       width: 100%;
       height: 25rem;
-      border-radius: 1rem;
+      border-radius: 0 0 1rem 1rem;
    }
 
    .avatar {
@@ -32,6 +29,11 @@ export const HeaderContent = styled.div`
       height: 15rem;
       border-radius: 50%;
       background: var(--color-primary);
+
+      img {
+         width: 100%;
+         height: 100%;
+      }
    }
 
    .info {

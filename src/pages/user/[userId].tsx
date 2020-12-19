@@ -2,8 +2,9 @@ import Post from '@components/Post';
 import CreatePost from '@components/CreatePost';
 import {
   Container, ProfileContainer, HeaderContent, ProfilePostsContainer,
-} from '@styles/pages/users';
+} from '@styles/pages/user';
 import { GetServerSideProps } from 'next';
+import avatar from '@assets/provisory-avatar-img.png';
 import api from '../../services/api';
 
 interface IPost {
@@ -24,7 +25,9 @@ const Profile = ({ name, posts }: IUser) => (
       <HeaderContent>
         <div className="background" />
         <div className="info">
-          <div className="avatar" />
+          <div className="avatar">
+            <img src={avatar} alt={name} />
+          </div>
           <span>
             {name}
           </span>
@@ -32,12 +35,13 @@ const Profile = ({ name, posts }: IUser) => (
       </HeaderContent>
       <ProfilePostsContainer>
         <h2>Minhas Postagens</h2>
-        <CreatePost />
+        <CreatePost avatar={avatar} />
         {posts ? posts.map((post) => (
           <Post
             key={post.id}
             postId={post.id}
             user={name}
+            avatar={avatar}
             content={post.content}
           />
         )).reverse() : null}

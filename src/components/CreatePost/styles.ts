@@ -24,6 +24,11 @@ export const Container = styled.div`
          height: 6rem;
          border-radius: 3rem;
          background: var(--color-background-darker);
+
+         img {
+            width: 100%;
+            height: 100%;
+         }
       }
 
       input {

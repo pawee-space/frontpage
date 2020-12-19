@@ -4,18 +4,21 @@ import { useToast } from '@hooks/toast';
 import { Container } from './styles';
 
 interface IPost {
-   user: string;
-   content: string;
-   postId: string;
+   // user: string;
+   // content: string;
+   // postId: string;
+   avatar: any;
 }
 
-const CreatePost: React.FC = () => {
+const CreatePost: React.FC<IPost> = ({ avatar }) => {
   const { addToast } = useToast();
 
   return (
     <Container>
       <form className="content">
-        <div className="avatar" />
+        <div className="avatar">
+          <img src={avatar} alt="usuario" />
+        </div>
         <input type="text" placeholder="Faça alguma publicação!!" />
       </form>
       <Button

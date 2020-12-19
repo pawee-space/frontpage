@@ -37,6 +37,12 @@ export const Container = styled.div`
          height: 10rem;
          background: var(--color-background-darker);
          border-radius: 50%;
+         padding: 0;
+
+         img {
+            width: 100%;
+            height: 100%;
+         }
       }
 
       div {
